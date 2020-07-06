@@ -11,8 +11,7 @@ import ImageCarousel from "../../components/image-list/ImageCarousel";
 export default function PostView(props) {
     const [post, setPost] = useState({});
     const [error, setError] = useState();
-    const url = window.location.href.split('/');
-    const apiLink = `${url[0]}//${url[2]}/api/post/share/${props.id}`;
+    const apiLink = `/api/post/share/${props.id}`;
 
     useEffect(() => {
 
