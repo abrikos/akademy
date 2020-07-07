@@ -17,7 +17,7 @@ async function siteMap() {
     map.push({
         label: 'Президиум', menu: true, items: [
             {label: 'Руководство', path: '/people/supervisors/all'},
-            {label: 'И.о. Президента', path: '/presidium/president', className: 'level2'},
+            {label: 'Президент', path: '/presidium/president', className: 'level2'},
             {label: 'Вице-президенты', path: '/presidium/vice', className: 'level2'},
             {label: 'Главный ученый секретарь', path: '/presidium/scsecretary', className: 'level2'},
             {label: 'Секретариат', path: '/division/5e80f5ba7549ce5472a10e13/secretariat'},
