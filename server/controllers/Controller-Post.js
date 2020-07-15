@@ -45,7 +45,7 @@ module.exports.controller = function (app) {
 
     app.get('/api/post/noc', (req, res) => {
         Mongoose.post.find({isNoc:true})
-            .then(count => res.send({count}))
+            .then(count => res.send(count))
             .catch(e => res.send(app.locals.sendError(e)))
     });
 
