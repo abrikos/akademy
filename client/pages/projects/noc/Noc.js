@@ -3,6 +3,7 @@ import MarkDown from "react-markdown";
 import PostList from "client/pages/news/PostList";
 import documents from "client/pages/projects/noc/text-documents"
 import comments from "client/pages/projects/noc/text-comments"
+import about from "client/pages/projects/noc/text-about"
 import BlockDirections from "client/pages/projects/noc/block-directions";
 
 export default function Noc(props) {
@@ -37,6 +38,10 @@ export default function Noc(props) {
                         <div>{c.text}</div>
                     </div>)}
                 </div>
+            </div>
+            <div className="block">
+                <h2>О нас</h2>
+                <MarkDown source={about.text}/>
             </div>
         </div>
     </div>

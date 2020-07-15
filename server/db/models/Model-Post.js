@@ -1,6 +1,7 @@
 import moment from "moment";
 import transliterate from "transliterate"
 import striptags from "striptags";
+
 const removeMd = require('remove-markdown');
 
 const mongoose = require('mongoose');
@@ -8,7 +9,7 @@ const Schema = mongoose.Schema;
 
 const modelSchema = new Schema({
         header: {type: String, label: 'Заголовок'},
-        text: {type: String, label: 'Текст', control:'markdown'},
+        text: {type: String, label: 'Текст', control: 'markdown'},
         imgUrl: {type: String},
         url: {type: String, label: 'Адрес на сайте СМИ'},
         isMarkdown: {type: Boolean, label: 'Markdown', default: true},
@@ -23,7 +24,7 @@ const modelSchema = new Schema({
         images: [{type: mongoose.Schema.Types.ObjectId, ref: 'Image'}],
         image: {type: mongoose.Schema.Types.ObjectId, ref: 'Image'},
         preview: {type: mongoose.Schema.Types.ObjectId, ref: 'Image'},
-
+        isGallery: Boolean
     },
     {
         timestamps: {createdAt: 'createdAt', updatedAt: 'updatedAt'},
@@ -68,7 +69,7 @@ modelSchema.virtual('shareData')
         return {
             header: `${process.env.SITE_NAME} - ${removeMd(this.header)}`,
             text: striptags(removeMd(this.text)),
-            image:  `${process.env.SITE}${this.image ? this.image.path : '/logo.svg'}`,
+            image: `${process.env.SITE}${this.image ? this.image.path : '/logo.svg'}`,
             url: `${process.env.SITE}${this.link}`
         }
     });

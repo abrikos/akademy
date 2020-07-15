@@ -6,12 +6,12 @@ import "client/pages/news/post-view.sass"
 import HtmlView from "client/components/HtmlView";
 import AdminLink from "client/components/AdminLink";
 import MarkDown from "react-markdown";
+import ImageCarousel from "../../components/image-list/ImageCarousel";
 
 export default function PostView(props) {
     const [post, setPost] = useState({});
     const [error, setError] = useState();
-    const url = window.location.href.split('/');
-    const apiLink = `${url[0]}//${url[2]}/api/post/share/${props.id}`;
+    const apiLink = `/api/post/share/${props.id}`;
 
     useEffect(() => {
 
@@ -38,7 +38,7 @@ export default function PostView(props) {
             <div className="post-text">
                 {post.isMarkdown ? <MarkDown source={post.text}/> : <HtmlView text={post.text}/>}
             </div>
-            {/*{!!images.length && <ImageCarousel images={images}/>}*/}
+            {post.isGallery &&  !!post.images.length && <ImageCarousel images={post.images}/>}
             <hr/>
             {post.images.filter(i => !i.isImage).map(i => <a href={i.path} key={i.id}>{i.description}</a>)}
             <hr/>

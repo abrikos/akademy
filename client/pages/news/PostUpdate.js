@@ -130,6 +130,13 @@ export default function (props) {
 
                 <FormGroup check>
                     <Label check>
+                        <Input type="checkbox" name="isGallery" defaultChecked={post.isGallery}/>
+                        Галерея
+                    </Label>
+                </FormGroup>
+
+                <FormGroup check>
+                    <Label check>
                         <Input type="checkbox" name="isNoc" defaultChecked={post.isNoc}/>
                         Проект НОЦ
                     </Label>
