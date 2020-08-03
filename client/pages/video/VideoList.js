@@ -32,6 +32,6 @@ export default function VideoList(props) {
         {totalCount>=0 && <div className="m-3 text-center">Найдено: {totalCount}</div>}
         {filter && !!totalCount && <Pager count={totalCount} filter={filter} onPageChange={getList}/>}
         <hr/>
-        <a href="https://www.youtube.com/channel/UC-ACL2rOnpLvtNYw9HZJQKQ/playlists" target="_blank" rel="noopener noreferrer">Смотреть на YouTube</a>
+        <a href="https://www.youtube.com/channel/UCmavIHBeAVh6lbVWkMljf3Q" target="_blank" rel="noopener noreferrer">Смотреть на YouTube</a>
     </div>
 }
