@@ -134,7 +134,7 @@ module.exports.controller = function (app) {
         return ret;
     }
 
-    covidSakha()
+    covid()
 
 
     async function covid() {
