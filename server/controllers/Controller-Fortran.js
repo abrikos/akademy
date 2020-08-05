@@ -7,6 +7,7 @@ module.exports.controller = function (app) {
 
 
     app.post('/api/fortran', async (req, res) => {
+        return;
         if (!req.body.code) return res.send({err: 'Empty code'})
         const file = `/tmp/${new Date().valueOf()}.f90`;
         const prog = `/tmp/${new Date().valueOf()}`;
