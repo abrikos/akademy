@@ -83,7 +83,9 @@ module.exports.controller = function (app) {
 
 
     function parseDate(date) {
+
         let datestr = date.replace('По состоянию на ', '').replace(',', '');
+
         const month = [
             'января',
             'февраля',
@@ -99,11 +101,12 @@ module.exports.controller = function (app) {
             'декабря'
         ];
         const arr = datestr.split(' ')
+
         const m = month.indexOf(arr[1]) + 1;
         if (arr[3]) {
             datestr = `${arr[2]}-${m < 10 ? `0${m}` : m}-${arr[0].length===1?'0'+arr[0]:arr[0]} ${arr[3]}`
         } else {
-            datestr = `2020-${m < 10 ? `0${m}` : m}-${arr[0].length===1?'0'+arr[0]:arr[0]} ${arr[2]}`
+            datestr = `2020-${m < 10 ? `0${m}` : m}-${arr[0].length===1?'0'+arr[0]:arr[0]}`
         }
         try {
             return moment(datestr).format('YYYY-MM-DD HH:mm');
@@ -131,7 +134,8 @@ module.exports.controller = function (app) {
         return ret;
     }
 
-    covidSakha()
+    covid()
+
 
     async function covid() {
         const rus = await covidRussia();

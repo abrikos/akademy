@@ -43,6 +43,12 @@ module.exports.controller = function (app) {
             .catch(e => res.send(app.locals.sendError(e)))
     });
 
+    app.get('/api/post/noc', (req, res) => {
+        Mongoose.post.find({isNoc:true})
+            .then(count => res.send(count))
+            .catch(e => res.send(app.locals.sendError(e)))
+    });
+
     app.post('/api/post/create', passportLib.isAdmin, async (req, res) => {
         const user = req.session.userId;
         const header = 'Новость ' + moment().format('YYYY-MM-DD HH:mm');

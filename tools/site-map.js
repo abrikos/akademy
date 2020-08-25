@@ -34,8 +34,6 @@ async function siteMap() {
             {label: 'История Якутии. Том 3', path: '/project/sakha-history/3'},
             {label: '------'},
             {label: 'Переработка мусора', path: '/project/recycle'},
-            {label: '------'},
-            {label: 'Компилятор FORTRAN', path: '/fortran'},
         ], menu: true
     })
 

@@ -24,7 +24,7 @@ export default function VideoList(props) {
     if(!models) return <Loader/>
     return <div className="post-list">
         <h1>Видео</h1>
-        <div className="d-sm-flex d-none flex-wrap justify-content-center">
+        <div className="flex-wrap justify-content-center">
             {models.map(m => <div className="m-2"><AdminLink model={m} {...props}/><VideoPlay key={m.id} video={m}/></div>)}
         </div>
 
@@ -32,6 +32,6 @@ export default function VideoList(props) {
         {totalCount>=0 && <div className="m-3 text-center">Найдено: {totalCount}</div>}
         {filter && !!totalCount && <Pager count={totalCount} filter={filter} onPageChange={getList}/>}
         <hr/>
-        <a href="https://www.youtube.com/channel/UC-ACL2rOnpLvtNYw9HZJQKQ/playlists" target="_blank" rel="noopener noreferrer">Смотреть на YouTube</a>
+        <a href="https://www.youtube.com/channel/UCmavIHBeAVh6lbVWkMljf3Q" target="_blank" rel="noopener noreferrer">Смотреть на YouTube</a>
     </div>
 }
