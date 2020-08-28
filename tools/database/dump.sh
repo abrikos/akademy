@@ -1,6 +1,6 @@
 #!/bin/bash
 cd ~/akademy
-now=$(date +"%m_%d_%Y")
+now=$(date +"%Y%m%d_%H")
 mongodump
 zip academy dump/academy/*
 #cp academy.zip build/.
