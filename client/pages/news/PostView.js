@@ -7,6 +7,8 @@ import HtmlView from "client/components/HtmlView";
 import AdminLink from "client/components/AdminLink";
 import MarkDown from "react-markdown";
 import ImageCarousel from "../../components/image-list/ImageCarousel";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faEye} from "@fortawesome/free-solid-svg-icons";
 
 export default function PostView(props) {
     const [post, setPost] = useState({});
@@ -28,8 +30,11 @@ export default function PostView(props) {
     return <div>
         <div className="post-full">
             <h1>{post.header}</h1>
+            <div className="d-flex justify-content-between">
             <DateFormat date={post.createdAt}/> {/*<FontAwesomeIcon icon={faEye}/> {post.views}*/}
+            <span><FontAwesomeIcon icon={faEye}/> {post.views}</span>
             <AdminLink model={post} isAdmin={post.editable} {...props}/>
+            </div>
             <hr/>
             <div className="d-flex justify-content-center">
                 <img src={post.previewPath} className="m-auto" alt={post.header}/>

@@ -93,6 +93,8 @@ module.exports.controller = function (app) {
             .then(item => {
                 if (!item) return res.sendStatus(404)//.send({message:'Wrong ID ' + req.params.id})
                 item.editable = req.session.admin;
+                item.views++;
+                item.save();
                 res.send(item)
             })
             .catch(e => res.send(app.locals.sendError(e)))
