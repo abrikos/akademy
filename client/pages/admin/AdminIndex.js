@@ -7,6 +7,7 @@ import {Nav, NavItem} from "reactstrap";
 import AdminNews from "client/pages/admin/AdminNews";
 import AdminModel from "client/pages/admin/AdminModel";
 import "./admin.sass"
+import bat from "client/files/asrsya-add-net-exchange.bat"
 
 export default function AdminIndex(props) {
     const pages = {
@@ -38,6 +39,7 @@ export default function AdminIndex(props) {
         </Nav>
         <div className="mt-3">
             {pages[props.control] && pages[props.control][1]}
+            <a href={bat}>bat</a>
         </div>
 
     </div>
