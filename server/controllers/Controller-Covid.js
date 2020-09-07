@@ -134,7 +134,7 @@ module.exports.controller = function (app) {
         return ret;
     }
 
-    covid()
+    //covid()
 
 
     async function covid() {
@@ -151,7 +151,7 @@ module.exports.controller = function (app) {
     }
 
     const job = new app.locals.CronJob('0 0 * * * *', async function () {
-        covid()
+        //covid()
     }, null, true, 'America/Los_Angeles');
 
 }
