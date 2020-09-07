@@ -16,9 +16,10 @@ export default function ShareButtons(props) {
 
 
     return <div>
-        <h3 className="text-center">Поделись с друзьями</h3>
+        <h3 className="text-center">Скопировать ссылку на статью</h3>
         <code>{link}</code>
         <CopyButton text={link}/>
+        <h3 className="text-center">Поделись с друзьями</h3>
         <div className="share-button d-flex justify-content-center flex-wrap">
             {blogs.map((b, i) => {
                 const x = params.offsetX + (params.iconWidth + params.spaceX) * b.col;
