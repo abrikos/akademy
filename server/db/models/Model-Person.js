@@ -89,7 +89,16 @@ modelSchema.virtual('divisions', {
     ref: 'Division',
     label: 'Подразделения',
     property: 'name',
-    readOnly: true,
+    //readOnly: true,
+    localField: '_id',
+    foreignField: 'persons',
+    justOne: false // set true for one-to-one relationship
+});
+
+modelSchema.virtual('councils', {
+    ref: 'Council',
+    label: 'ОУС',
+    property: 'name',
     localField: '_id',
     foreignField: 'persons',
     justOne: false // set true for one-to-one relationship
@@ -114,14 +123,6 @@ modelSchema.virtual('councilsChief', {
     justOne: false // set true for one-to-one relationship
 });
 
-modelSchema.virtual('councils', {
-    ref: 'Council',
-    label: 'ОУС',
-    property: 'name',
-    localField: '_id',
-    foreignField: 'persons',
-    justOne: false // set true for one-to-one relationship
-});
 
 export default mongoose.model("Person", modelSchema)
 

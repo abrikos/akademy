@@ -159,6 +159,7 @@ export default function (props) {
                 </div>
 
             </div>
+            <Button onClick={()=>navigate(`/admin/${modelName}`)} color="warning">Закрыть</Button>
 
             <Button onClick={deleteModel} color="danger">Удалить</Button>
         </div>}

@@ -7,7 +7,6 @@ import {Nav, NavItem} from "reactstrap";
 import AdminNews from "client/pages/admin/AdminNews";
 import AdminModel from "client/pages/admin/AdminModel";
 import "./admin.sass"
-import bat from "client/files/asrsya-add-net-exchange.bat"
 
 export default function AdminIndex(props) {
     const pages = {
@@ -16,7 +15,7 @@ export default function AdminIndex(props) {
         news: ['Новости HTML', <AdminNews type={'news'} {...props}/>],
         //post: ['Новости', <AdminModel {...props}/>],
         //static:['Страницы', <AdminNews type={'static'} {...props}/>],
-        video:['YouTube', <AdminModel {...props}/>],
+        video: ['YouTube', <AdminModel {...props}/>],
         users: ['Пользователи', <AdminUser  {...props}/>],
         division: ['Подразделения', <AdminModel  {...props}/>],
         person: ['Персоны', <AdminModel  {...props}/>],
@@ -27,19 +26,20 @@ export default function AdminIndex(props) {
 
     };
 
-    useEffect(()=>{
+    useEffect(() => {
         props.useTheme('admin')
-    },[])
+    }, [])
 
     if (!props.authenticatedUser.admin) return <ErrorPage error={403}/>;
 
     return <div>
         <Nav tabs>
-            {Object.keys(pages).map(key => <NavItem key={key}><A className={`nav-link ${key === props.control ? 'active' : ''}`} href={`/admin/${key}`}>{pages[key][0]}</A></NavItem>)}
+            {Object.keys(pages).map(key => <NavItem key={key}><A
+                className={`nav-link ${key === props.control ? 'active' : ''}`}
+                href={`/admin/${key}`}>{pages[key][0]}</A></NavItem>)}
         </Nav>
         <div className="mt-3">
             {pages[props.control] && pages[props.control][1]}
-            <a href={bat}>bat</a>
         </div>
 
     </div>
