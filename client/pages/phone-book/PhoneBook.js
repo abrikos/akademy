@@ -9,7 +9,7 @@ export default function PhoneBook(props) {
 
     useEffect(() => {
         props.api('/division/list', {where: {noPhoneBook: {$ne: true}}}).then(dt => {
-            setData(dt.list.filter(d => d.personsWithChief.filter(p => p.phone || p.email).length));
+            setData(dt.list.filter(d => d.personsWithChief.filter(p =>p && (p.phone || p.email)).length));
         });
 
     }, [props.page]);
