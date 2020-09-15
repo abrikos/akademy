@@ -8,7 +8,7 @@ async function siteMap() {
     map.push({label: 'Главная', path: '/', menu: true});
     map.push({label: 'Новости', path: '/news', menu: true});
     const divisions = await Mongoose.division.find({inMenu: true});
-    map.push({label: 'Структура', items: [{label: 'Аппарат', path: '/apparatus'},{label: 'Группа по подготовке научных журналов', path: '/journal'}].concat(divisions.map(d => ({label: d.name, path: d.link}))), menu: true});
+    map.push({label: 'Структура', items: [{label: 'Аппарат', path: '/apparatus'}].concat(divisions.map(d => ({label: d.name, path: d.link}))), menu: true});
     const meetings = await Mongoose.council.find({isJoined: true});
     map.push({label: 'Ученые советы', items: [{label: 'Ученый совет Президиума АН РС(Я)', path: '/presidium/council'}, {label: '------'}, {label: 'Объединенные ученые советы', path: '/council-about'}].concat(meetings.map(d => ({label: d.name, path: d.link}))), menu: true});
     map.push({
@@ -39,10 +39,12 @@ async function siteMap() {
 
     map.push({
         label: 'Информация', items: [
-            {label: 'Выборы', path: '/election', className: 'text-danger'},
+            //{label: 'Выборы', path: '/election', className: 'text-danger'},
+
             {label: 'Об Академии', path: '/about'},
             {label: 'Веб-ресурсы академии', path: '/web-resources'},
             {label: 'Научные учреждения', path: '/science-org'},
+            {label: 'Научные журналы', path: '/journal'},
             {label: 'Документы', path: '/documents/all'},
             {label: 'Партнёры', path: '/partners'},
             {label: 'СМИ о нас', path: '/mass-media'},
