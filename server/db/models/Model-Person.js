@@ -41,7 +41,7 @@ const modelSchema = new Schema({
 modelSchema.statics.population = ['image', 'divisions', 'councils', 'images', 'councilsChief', 'divisionsChief'];
 modelSchema.formOptions = {
     listOrder: {fio: 1},
-    listFields: ['fioShort'],
+    listFields: ['fio'],
     virtualFields: ['divisions', 'councils', 'councilsChief', 'divisionsChief'],
     searchFields: ['fname']
 }
