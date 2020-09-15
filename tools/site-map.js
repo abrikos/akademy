@@ -7,7 +7,7 @@ async function siteMap() {
     const map = [];
     map.push({label: 'Главная', path: '/', menu: true});
     map.push({label: 'Новости', path: '/news', menu: true});
-    const divisions = await Mongoose.division.find({inMenu: true});
+    const divisions = await Mongoose.division.find({inMenu: true}).sort('name');
     map.push({label: 'Структура', items: divisions.map(d => ({label: d.name, path: d.link})), menu: true});
     const meetings = await Mongoose.council.find({isJoined: true});
     map.push({label: 'Ученые советы', items: [{label: 'Ученый совет Президиума АН РС(Я)', path: '/presidium/council'}, {label: '------'}, {label: 'Объединенные ученые советы', path: '/council-about'}].concat(meetings.map(d => ({label: d.name, path: d.link}))), menu: true});
