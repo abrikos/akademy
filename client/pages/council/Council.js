@@ -41,7 +41,7 @@ export default function Council(props) {
         </Input>
         <div className="d-flex flex-wrap">
             {data.chief && <PersonSmall councilStatus={'Председатель'} person={data.chief} {...props}/>}
-            {data.deputy && <PersonSmall councilStatus={'Заместитель'} person={data.deputy} {...props}/>}
+            {/*{data.deputy && <PersonSmall councilStatus={'Заместитель'} person={data.deputy} {...props}/>}*/}
             {data.secretary && <PersonSmall councilStatus={'Секретарь'} person={data.secretary} {...props}/>}
             {persons.map(p => <PersonSmall status={p.status} key={p.id} person={p} {...props}/>)}
         </div>

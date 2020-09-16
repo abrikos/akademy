@@ -45,7 +45,7 @@ export default function Presidium(props) {
         <h1>Состав ученого совета Президиума Академии наук РС(Я)</h1>
         <div className="d-flex flex-wrap">
             {model.chief && <PersonSmall presidium={true} status={'Председатель'} person={model.chief} {...props}/>}
-            {model.deputy && <PersonSmall presidium={true} status={'Заместитель'} person={model.deputy} {...props}/>}
+            {/*{model.deputy && <PersonSmall presidium={true} status={'Заместитель'} person={model.deputy} {...props}/>}*/}
             {model.secretary && <PersonSmall presidium={true} status={'Секретарь'} person={model.secretary} {...props}/>}
             {model.persons.map(p => <PersonSmall presidium={true} key={p.id} person={p} {...props}/>)}
         </div>
