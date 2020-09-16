@@ -11,7 +11,7 @@ export default function (props) {
     const toggle = () => setDropdownOpen(prevState => !prevState);
     const list = props.list;
     useEffect(() => {
-        setValue(props.value)
+        setValue(props.value || [])
     }, [])
 
     function addHasMany(e) {

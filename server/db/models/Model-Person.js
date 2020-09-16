@@ -26,6 +26,7 @@ const modelSchema = new Schema({
 
         memberStatus: {type: String, label: 'Звание 2'},
         isApparat: {type: Boolean, label: 'В аппарате'},
+        isActual: {type: Boolean, label: 'Действующий работник'},
         image: {type: mongoose.Schema.Types.ObjectId, ref: 'Image'},
         images: [{type: mongoose.Schema.Types.ObjectId, ref: 'Image'}],
 
@@ -42,7 +43,7 @@ modelSchema.statics.population = ['image', 'divisions', 'councils', 'images', 'c
 modelSchema.formOptions = {
     listOrder: {fio: 1},
     listFields: ['fio'],
-    virtualFields: ['divisions', 'councils', 'councilsChief', 'divisionsChief'],
+    virtualFields: ['divisions', 'councils', 'councilsChief', 'divisionsChief','councilsSecretary'],
     searchFields: ['fname']
 }
 modelSchema.virtual('photo')
@@ -120,6 +121,15 @@ modelSchema.virtual('councilsChief', {
     property: 'name',
     localField: '_id',
     foreignField: 'chief',
+    justOne: false // set true for one-to-one relationship
+});
+
+modelSchema.virtual('councilsSecretary', {
+    ref: 'Council',
+    label: 'Секретарь ОУС',
+    property: 'name',
+    localField: '_id',
+    foreignField: 'secretary',
     justOne: false // set true for one-to-one relationship
 });
 
