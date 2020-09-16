@@ -40,9 +40,9 @@ export default function Council(props) {
             {councilVoices.map((d, i) => <option key={i} value={d.value}>{d.label}</option>)}
         </Input>
         <div className="d-flex flex-wrap">
-            {data.chief && <PersonSmall status={'Председатель'} person={data.chief} {...props}/>}
-            {data.deputy && <PersonSmall status={'Заместитель'} person={data.deputy} {...props}/>}
-            {data.secretary && <PersonSmall status={'Секретарь'} person={data.secretary} {...props}/>}
+            {data.chief && <PersonSmall councilStatus={'Председатель'} person={data.chief} {...props}/>}
+            {data.deputy && <PersonSmall councilStatus={'Заместитель'} person={data.deputy} {...props}/>}
+            {data.secretary && <PersonSmall councilStatus={'Секретарь'} person={data.secretary} {...props}/>}
             {persons.map(p => <PersonSmall status={p.status} key={p.id} person={p} {...props}/>)}
         </div>
     </div>

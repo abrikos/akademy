@@ -9,6 +9,7 @@ export default function (props) {
     const p = props.person;
     return <div className="person-small">
         <strong><A href={p.link}>{p.fio}</A></strong>
+        {props.councilStatus && <div className="text-right">{props.councilStatus}</div>}
         <div className="row">
             <div className="col-4">
                 <img src={p.image ? p.image.path : noPhoto} alt={p.fio} className={p.image ? '' : 'no-photo'}/>
