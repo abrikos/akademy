@@ -90,7 +90,7 @@ modelSchema.virtual('divisions', {
     ref: 'Division',
     label: 'Подразделения',
     property: 'name',
-    //readOnly: true,
+    readOnly: true,
     localField: '_id',
     foreignField: 'persons',
     justOne: false // set true for one-to-one relationship
@@ -121,6 +121,7 @@ modelSchema.virtual('councilsChief', {
     property: 'name',
     localField: '_id',
     foreignField: 'chief',
+    readOnly: true,
     justOne: false // set true for one-to-one relationship
 });
 
@@ -130,6 +131,7 @@ modelSchema.virtual('councilsSecretary', {
     property: 'name',
     localField: '_id',
     foreignField: 'secretary',
+    readOnly: true,
     justOne: false // set true for one-to-one relationship
 });
 
