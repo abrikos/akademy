@@ -109,7 +109,7 @@ modelSchema.virtual('divisionsChief', {
     ref: 'Division',
     label: 'Шеф Подразделений',
     property: 'name',
-    readOnly: true,
+    //readOnly: true,
     localField: '_id',
     foreignField: 'chief',
     justOne: false // set true for one-to-one relationship
