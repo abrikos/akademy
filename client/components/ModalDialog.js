@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Button, Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 
 import PropTypes from "prop-types";
+
 ModalDialog.propTypes = {
     body: PropTypes.object,
     header: PropTypes.string,
@@ -25,7 +26,7 @@ export function ModalDialog(props) {
                 <Button color="secondary" onClick={toggle}>Закрыть</Button>
             </ModalFooter>
         </Modal>
-        <a href="#" onClick={toggle}>{props.buttonText}</a>
+        <span onClick={toggle} className="pointer">{props.buttonText}</span>
     </div>
 
 }

@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import MarkDown from "react-markdown";
 import AdminLink from "client/components/AdminLink";
-import {A} from "hookrouter"
 import Loader from "client/components/Loader";
 
 export default function (props) {

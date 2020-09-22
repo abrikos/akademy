@@ -2,7 +2,6 @@ import React from "react";
 import MenuTop from "client/components/themes/top-menu/MenuTop";
 import BottomInfo from "client/pages/home/BottomInfo";
 import "client/components/themes/main.sass"
-import Covid from "client/pages/home/Covid";
 import "client/components/themes/admin/theme-admin.sass"
 
 export default function (props) {

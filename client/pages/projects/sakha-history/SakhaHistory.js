@@ -3,6 +3,7 @@ import "./sakha-history.sass"
 import {A} from "hookrouter"
 import toms from "./toms.json"
 import * as images from "./images"
+
 export default function (props) {
 
     if(props.tom){

@@ -46,14 +46,6 @@ export default function (props) {
         ]
     };
 
-    function slideMax(e) {
-        setMax(e.target.value)
-    }
-
-    function slideDays(e) {
-        setDays(e.target.value)
-    }
-
     return <div>
         <div>
             <button onClick={() => setMax(max - 10)}>-10</button>

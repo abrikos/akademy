@@ -11,10 +11,10 @@ return <div className="power8">
         IBM Power System S822LC
         с двумя графическими ускорителями
         NVIDIA Tesla P100</h1>
-    <img src={front} className="img-fluid m-auto d-block"/>
+    <img src={front} className="img-fluid m-auto d-block" alt={'front'}/>
     <hr/>
         <SystemTable/>
-    <img src={overview} className="img-fluid m-auto d-block"/>
+    <img src={overview} className="img-fluid m-auto d-block" alt={'overview'}/>
 
 
     <h2>Основными областями применения вычислительной системы</h2>
@@ -47,7 +47,7 @@ return <div className="power8">
     </table>
 
     <h2>Архитектурно вычислительная система</h2>
-    <img src={arch} className="img-fluid m-auto d-block"/>
+    <img src={arch} className="img-fluid m-auto d-block" alt={'architecture'}/>
 
     <h2>Результаты тестов</h2>
     <table className="table table-info">

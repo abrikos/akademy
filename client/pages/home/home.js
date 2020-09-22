@@ -34,7 +34,7 @@ export default function Home(props) {
         return <div className="first-news">
             <div className="first-news-img">
                 {post.isMassMedia && <a href={post.link} target="_blank" rel="noopener noreferrer"><img src={post.previewPath} alt={post.header} className="img-preview"/></a>}
-                {!post.isMassMedia && <A href={post.link}><img src={post.previewPath} className="img-preview"/></A>}
+                {!post.isMassMedia && <A href={post.link}><img src={post.previewPath} className="img-preview" alt={'cover'}/></A>}
             </div>
             <div><DateFormat date={post.date}/></div>
             {post.isMassMedia && <a href={post.link} target="_blank" rel="noopener noreferrer">{post.header}</a>}
@@ -75,7 +75,7 @@ export default function Home(props) {
                 </tr>)}
                 </tbody>
             </table>
-            <small>Информация с сайта <a href="https://sakha.gks.ru/" target="_blank">sakha.gks.ru</a> </small>
+            <small>Информация с сайта <a href="https://sakha.gks.ru/" target="_blank"  rel="noopener noreferrer">sakha.gks.ru</a> </small>
         </div>
         <hr/>
 

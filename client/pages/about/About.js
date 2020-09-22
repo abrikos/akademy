@@ -3,6 +3,7 @@ import "./about.sass"
 import globe from "client/images/globe.svg";
 import atom from "client/images/atom.svg";
 import org from "client/images/organization.svg";
+
 export default function About(props) {
     return <div className="about">
         <h1>АКАДЕМИЯ НАУК РЕСПУБЛИКИ САХА (ЯКУТИЯ)</h1>

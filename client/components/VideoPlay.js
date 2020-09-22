@@ -1,6 +1,7 @@
 import YouTube from 'react-youtube';
 import React from "react";
 import PropTypes from "prop-types";
+
 VideoPlay.propTypes = {
     video: PropTypes.object.isRequired,
 };

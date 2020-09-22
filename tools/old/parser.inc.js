@@ -1,5 +1,6 @@
 import * as axios from "axios";
 import {parse} from "node-html-parser";
+
 const fckngsht = ["", "января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"];
 export default {
     site: 'http://iltumen.ru',
@@ -20,8 +21,8 @@ export default {
         return parse(response.data);
     },
 
-    adapt:(text)=>{
-        return text.replace(/'/g,'&#39');
+    adapt: (text) => {
+        return text.replace(/'/g, '&#39');
     }
 
 }

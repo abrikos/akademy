@@ -1,11 +1,5 @@
 import React, {useState} from "react";
-import {
-    Carousel,
-    CarouselItem,
-    CarouselControl,
-    CarouselIndicators,
-    CarouselCaption
-} from 'reactstrap';
+import {Carousel, CarouselCaption, CarouselControl, CarouselIndicators, CarouselItem} from 'reactstrap';
 import ImageList from "client/components/image-list/ImageList";
 
 export default function ImageCarousel(props) {

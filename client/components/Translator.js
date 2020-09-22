@@ -1,5 +1,5 @@
 import i18n from 'client/i18n';
-import { NamespacesConsumer, Trans } from 'react-i18next';
+import {NamespacesConsumer, Trans} from 'react-i18next';
 import React from "react";
 
 

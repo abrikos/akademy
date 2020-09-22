@@ -17,7 +17,7 @@ export default function (props) {
             <div className="input-group">
                 <Input name="text" placeholder="Введите строку для поиска"/>
                 <div className="input-group-append">
-                    <Button className="input-group-text">🔍</Button>
+                    <Button className="input-group-text"><span role="img" aria-label="search">🔍</span></Button>
                 </div>
             </div>
 

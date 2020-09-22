@@ -12,7 +12,6 @@ import putin from "client/pages/home/research/putin.jpeg"
 import tea from "client/pages/home/research/tea.jpeg"
 
 
-
 export default function Research(props) {
 
 

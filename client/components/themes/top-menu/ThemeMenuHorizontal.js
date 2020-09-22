@@ -3,7 +3,6 @@ import MenuTop from "client/components/themes/top-menu/MenuTop";
 import BottomInfo from "client/pages/home/BottomInfo";
 import "client/components/themes/main.sass"
 import "client/components/themes/top-menu/theme-horizontal.sass"
-import CovidShort from "client/pages/home/CovidShort";
 
 export default function ThemeMenuHorizontal(props) {
     return <div className="theme-horizontal">

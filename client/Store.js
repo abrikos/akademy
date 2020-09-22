@@ -92,7 +92,7 @@ export default function App() {
 
         switchTheme(name) {
             this.setCookie('theme', name)
-            setTheme(name)
+            //setTheme(name)
         },
 
         useTheme(name) {

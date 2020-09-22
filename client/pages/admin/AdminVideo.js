@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import {Button, FormFeedback, FormGroup, Input, Label} from "reactstrap";
 import {A, navigate} from "hookrouter"
 import Pager from "client/components/Pager";
-import MarkdownEditor from "client/components/markdown-editor/MarkdownEditor";
 import VideoPlay from "client/components/VideoPlay";
 
 export default function AdminVideo(props) {

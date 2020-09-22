@@ -1,12 +1,10 @@
 import React, {useEffect, useState} from "react";
-import {Button, Dropdown, DropdownMenu, DropdownToggle} from "reactstrap";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faWindowClose} from "@fortawesome/free-solid-svg-icons";
+import {Dropdown, DropdownMenu, DropdownToggle} from "reactstrap";
 import {A} from "hookrouter"
 
 export default function (props) {
     const [value, setValue] = useState([])
-    const [selected, setSelected] = useState([])
+    //const [selected, setSelected] = useState([])
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const toggle = () => setDropdownOpen(prevState => !prevState);
     const list = props.list;
@@ -14,18 +12,12 @@ export default function (props) {
         setValue(props.value || [])
     }, [])
 
-    function addHasMany(e) {
-        const currValue = [...value];
-        setValue(currValue.concat(selected))
-        toggle()
-    }
-
     function selectValues(e) {
         const vals = [];
         for (const o of e.target.options) {
             if (o.selected) vals.push(list.find(m => m.id === o.value))
         }
-        setSelected(vals)
+        //setSelected(vals)
         const currValue = [...value];
         setValue(currValue.concat(vals))
         toggle()

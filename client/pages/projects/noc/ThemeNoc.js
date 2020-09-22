@@ -4,7 +4,6 @@ import "client/components/themes/top-menu/theme-horizontal.sass"
 import logo from "./noc.svg"
 import logoAcademy from "client/images/logo-text.svg"
 import "./noc.sass"
-import {A} from "hookrouter"
 
 export default function ThemeNoc(props) {
     return <div className="theme-noc container">

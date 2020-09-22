@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import {t} from "client/components/Translator";
 import {navigate} from "hookrouter";
 import {Button, FormFeedback, FormGroup, Input, Label} from "reactstrap";
 import vk from "client/images/vkcom.svg"

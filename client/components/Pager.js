@@ -1,6 +1,7 @@
 import {Pagination, PaginationItem, PaginationLink} from "reactstrap";
 import React, {useEffect, useState} from "react";
 import PropTypes from "prop-types";
+
 Pager.propTypes = {
     count: PropTypes.number.isRequired,
     filter: PropTypes.object.isRequired,

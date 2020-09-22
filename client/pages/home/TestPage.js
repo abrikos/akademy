@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {A} from "hookrouter";
 import DateFormat from "client/components/DateFormat";
-import Covid from "client/pages/home/Covid";
 import PostSmall from "client/pages/news/PostSmall";
 
 export default function (props) {
@@ -22,7 +21,7 @@ export default function (props) {
     function formatLastNews(i) {
         return <div className="first-news">
             <div className="first-news-img">
-                <A href={newsLast[i].link}><img src={newsLast[i].previewPath} className="img-fluid"/></A>
+                <A href={newsLast[i].link}><img src={newsLast[i].previewPath} className="img-fluid" alt={'img'}/></A>
             </div>
             <div><DateFormat date={newsLast[i].date}/></div>
             <A href={newsLast[i].link}>{newsLast[i].header}</A>

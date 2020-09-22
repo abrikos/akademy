@@ -1,6 +1,4 @@
 import React from "react";
-import Email from "client/components/Email";
-import Phone from "client/components/Phone";
 
 export default function (props) {
     return <div>
@@ -13,7 +11,7 @@ export default function (props) {
         <h3>Научный журнал «Природные ресурсы Арктики и Субактики»</h3>
         (Arctic and Subarctic Natural Resources)
         <div className="row">
-            <div className="col-sm-3"><img src="https://lh6.googleusercontent.com/HAZyYMtQ_Z2DIQevCj2QO9ogOjkrWc1lIaFFPq4dakXqATDeQ7e52lPOz9pHfRuRALI8vUiGwm3JrgeZ5tmFFByYkt3dG8nA7h-JSSeo7faHGMf1AA2XdXO4SH4oszZDxIxBfiStXTyvb45mdA" className="img-fluid"/></div>
+            <div className="col-sm-3"><img src="https://lh6.googleusercontent.com/HAZyYMtQ_Z2DIQevCj2QO9ogOjkrWc1lIaFFPq4dakXqATDeQ7e52lPOz9pHfRuRALI8vUiGwm3JrgeZ5tmFFByYkt3dG8nA7h-JSSeo7faHGMf1AA2XdXO4SH4oszZDxIxBfiStXTyvb45mdA" alt={'cover'}  className="img-fluid"/></div>
             <div className="col-sm-9">
                 <i>Гл. редактор – В.В. Филиппов, член-корр. РАН, и.о. президента АН РС (Я)</i>
                 <br/>Издается с 1996 г., до 2018 г. – «Наука и образование». Учредителями являются: Академия наук Республики Саха (Якутия), Якутский научный центр СО РАН, Северо-Восточный федеральный университет им. М.К. Аммосова, Министерство образования и науки Республики Саха (Якутия). Журнал выходит 4 раза в год. Публикуются  результаты работ по арктической проблематике в области геологии, мерзлотоведения, изучения биологических ресурсов, экологии, продуктивности и устойчивости Арктических и Субарктических экосистем, эксплуатации техники на Севере по трем группам специальностей, включающим 10 специальностей по шести отраслям наук (геолого-минералогические, географические, биологические, сельскохозяйственные, технические, физико-математические): 03.02.00 «Общая биология», 05.16.00 «Металлургия и материаловедение», 25.00.00 «Науки о Земле».
@@ -29,7 +27,7 @@ export default function (props) {
         <h3>Научно-популярный журнал «Наука и техника в Якутии»</h3>
 
         <div className="row">
-            <div className="col-sm-3"><img src="https://lh3.googleusercontent.com/S9lG7-AAtt7n_LjdjpRDjw0lvNWJe9CRo3NVKJOpFfJtLk2ZWnPmwjJQQCI4gBh8Z7u6zndpuOsbuqp7d3JgovkWWZuLtK-9vFlU1uM8qPSKHXqW_SBDvoNlVV-8IiU7Y896Rdbie7oiJsKhVg" className="img-fluid"/></div>
+            <div className="col-sm-3"><img src="https://lh3.googleusercontent.com/S9lG7-AAtt7n_LjdjpRDjw0lvNWJe9CRo3NVKJOpFfJtLk2ZWnPmwjJQQCI4gBh8Z7u6zndpuOsbuqp7d3JgovkWWZuLtK-9vFlU1uM8qPSKHXqW_SBDvoNlVV-8IiU7Y896Rdbie7oiJsKhVg" alt="cover" className="img-fluid"/></div>
             <div className="col-sm-9">
                 <i>Гл. редактор – В.В. Шепелев, д.г.н.,
                     зам. дир. ИМЗ СО РАН, академик АН РС (Я).</i>

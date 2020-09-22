@@ -21,7 +21,7 @@ export default function Council(props) {
 
     function selectDivision(voice) {
         setVoice(voice * 1)
-        setPersons(data.persons.filter(p => voice === -1 || p.voice === voice * 1 || voice * 1 === 0 && p.member === 0))
+        setPersons(data.persons.filter(p => voice === -1 || p.voice === voice * 1 || (voice * 1 === 0 && p.member === 0)))
     }
 
     if (!data) return <Loader/>;

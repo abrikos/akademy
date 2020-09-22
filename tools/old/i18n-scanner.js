@@ -1,26 +1,25 @@
 const fs = require('fs');
-const walkSync = function(dir, filelist) {
+const walkSync = function (dir, filelist) {
     let files = fs.readdirSync(dir);
     filelist = filelist || [];
-    files.forEach(function(file) {
+    files.forEach(function (file) {
         if (fs.statSync(dir + '/' + file).isDirectory()) {
             filelist = walkSync(dir + '/' + file, filelist);
-        }
-        else {
-            filelist.push(dir+'/'+file);
+        } else {
+            filelist.push(dir + '/' + file);
         }
     });
     return filelist;
 };
 
-const files =walkSync('./client');
+const files = walkSync('./client');
 const langFile = 'public/locales/ru.json';
 let langJson = JSON.parse(fs.readFileSync(langFile, 'utf-8'));
 const regexp = /[^\w]t\('(.*?)'[\)|,]/g;
 const regexp2 = /label: '(.*?)'/g;
 const regexp3 = /title: '(.*?)'/g;
 
-for(const file of files) {
+for (const file of files) {
     const content = fs.readFileSync(file)
     let result;
     while (result = regexp.exec(content)) {

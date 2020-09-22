@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Loader from "client/components/Loader";
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import {docco} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import codes from "./codes.json"
 
 export default function (props) {

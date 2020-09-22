@@ -3,7 +3,6 @@ import Phone from "client/components/Phone";
 import Email from "client/components/Email";
 import Address from "client/components/Address";
 import {A} from "hookrouter"
-import bat from "client/files/asrsya-add-net-exchange.bat";
 
 export default function BottomInfo(props) {
     return <div id="bottom-info">

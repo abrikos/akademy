@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import "./markdown.sass"
 import MarkDown from "react-markdown";
 import PropTypes from "prop-types";
-import {Button, Input} from "reactstrap";
+import {Input} from "reactstrap";
 import {ModalDialog} from "client/components/ModalDialog";
 
 MarkdownEditor.propTypes = {

@@ -19,9 +19,9 @@ async function main() {
 
         const file = funcs.getImage(imgNode);
         const image = await Mongoose.Image.findOne({name: file.name});
-        if(!person) person = await Mongoose.Person.create({fio, image, description})
-        if(!person.image) person.image = image;
-        if(!person.description) person.description = description;
+        if (!person) person = await Mongoose.Person.create({fio, image, description})
+        if (!person.image) person.image = image;
+        if (!person.description) person.description = description;
         person.member = 2;
         person.memberStatus = status;
         i++;

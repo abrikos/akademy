@@ -4,7 +4,6 @@ import {A} from "hookrouter";
 import DateFormat from "client/components/DateFormat";
 import PropTypes from "prop-types";
 import striptags from "striptags"
-import MarkDown from "react-markdown";
 
 const removeMd = require('remove-markdown');
 

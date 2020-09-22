@@ -1,13 +1,12 @@
 const fs = require('fs');
-const walkSync = function(dir, filelist) {
+const walkSync = function (dir, filelist) {
     let files = fs.readdirSync(dir);
     filelist = filelist || [];
-    files.forEach(function(file) {
+    files.forEach(function (file) {
         if (fs.statSync(dir + '/' + file).isDirectory()) {
             filelist = walkSync(dir + '/' + file, filelist);
-        }
-        else {
-            filelist.push(dir+'/'+file);
+        } else {
+            filelist.push(dir + '/' + file);
         }
     });
     return filelist;
@@ -15,11 +14,11 @@ const walkSync = function(dir, filelist) {
 
 
 const langFile = 'public/locales/ru.json';
-const langJson = require('../'+langFile);
+const langJson = require('../' + langFile);
 const translatedJson = require('tools/old/translated.json');
 
 
-for(let i =0; i < Object.keys(translatedJson).length; i++){
+for (let i = 0; i < Object.keys(translatedJson).length; i++) {
     const sourceKey = Object.keys(translatedJson)[i];
     const targetKey = Object.keys(langJson)[i];
     langJson[targetKey] = translatedJson[sourceKey];

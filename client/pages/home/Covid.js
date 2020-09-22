@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import "./covid.sass"
-import {A} from "hookrouter"
 import Chart from "react-apexcharts";
 import axios from "axios";
 import MarkDown from "react-markdown";
