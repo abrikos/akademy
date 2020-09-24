@@ -14,11 +14,7 @@ export default function Lecture(props) {
         <div className="alert alert-info">Для того чтобы зафиксировать свое присутствие на лекции оставьте комментарий к видео "Присутствовал(а)"</div>
         {list && list.list.map(l => <div key={l.id}>
             <h3>{l.name}</h3>
-            <div className="row">
-                <div className="col"><strong>{l.lector}</strong></div>
-                <div className="col"><small>{l.date}</small></div>
-
-            </div>
+            <small>{l.date}</small> | Лектор: <strong>{l.lector}</strong>
             <MarkDown source={l.description}/>
             <hr/>
         </div>)}
