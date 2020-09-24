@@ -10,6 +10,7 @@ import document from "server/db/models/Model-Document";
 import council from "server/db/models/Model-Council";
 import covid from "server/db/models/Model-Covid";
 import conference from "server/db/models/Model-Conference";
+import lecture from "server/db/models/Model-Lecture";
 
 const mongoose = require("mongoose");
 require('dotenv').config();
@@ -38,7 +39,7 @@ const Mongoose = {
     isValidId: function (id) {
         return mongoose.Types.ObjectId.isValid(id)
     },
-    User, image, post, division, person, meeting, edition, video, document, council, covid, conference
+    User, image, post, division, person, meeting, edition, video, document, council, covid, conference, lecture
 
 };
 export default Mongoose;
