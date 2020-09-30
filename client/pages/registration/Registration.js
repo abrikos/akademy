@@ -13,9 +13,15 @@ export default function Registration(props) {
 
     function submit(e) {
         e.preventDefault();
-        const form = e.target
-        //console.log()
-        props.api('/registration',new FormData(form))
+        const form = new FormData(e.target)
+        //console.log(form.entries())
+        props.api('/registration',form)
+    }
+
+    function files(e){
+        if(e.target.files.length <2){
+            alert('Внимание! Вы выбрали менее 2х файлов!')
+        }
     }
 
     return <div className="registration">
@@ -101,7 +107,8 @@ export default function Registration(props) {
             </table>
             <hr/>
             <MarkDown source={text}/>
-            Загрузить документы <input type="file" name={"files"}/>
+            Загрузить документы <input type="file" name={"files"} multiple onChange={files}/>
+            <div><strong className="text-danger">Скопируйте все документы в одну папку и загрузите их все за 1 раз (используйте Shift+Click или Ctrl+Click при выборе файлов)</strong></div>
             <hr/>
             <Button>Отправить</Button>
         </form>
