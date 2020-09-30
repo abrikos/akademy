@@ -1,5 +1,5 @@
 #!/bin/sh
-cd akademy
+cd ~/akademy
 git pull
 tools/site-map.sh
 npm run build
