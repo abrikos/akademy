@@ -44,7 +44,7 @@ export default function Home(props) {
 
 
 
-    return <div className="home">
+    return <div className="home py-2">
         <div className="row">
             {newsLast && <div className="col-sm-4">
                 {formatLastNews(newsLast[0])}

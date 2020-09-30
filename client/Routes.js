@@ -45,6 +45,8 @@ import Power8 from "client/pages/power8/Power8";
 import Noc from "client/pages/projects/noc/Noc";
 import CountDown from "client/pages/countdown/CountDown";
 import Lecture from "client/pages/lecture/Lecture";
+import Registration from "client/pages/registration/Registration";
+import RegistrationList from "client/pages/registration/RegistrationList";
 
 export default function Routes(props) {
 
@@ -73,6 +75,8 @@ export default function Routes(props) {
         "/news": () => <NewsPage {...props}/>,
         "/video": () => <VideoList {...props}/>,
         "/edition": () => <Edition {...props}/>,
+        "/registration": () => <Registration {...props}/>,
+        "/registration/list": () => <RegistrationList {...props}/>,
         "/presidium/:type": (params) => <Presidium {...params} {...props}/>,
         "/static/:path": (params) => <PostView {...params} {...props}/>,
         "/news/:id": (params) => <PostView {...params} {...props}/>,
