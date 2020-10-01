@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./registration.sass"
 import {Button} from "reactstrap";
 import MarkDown from "react-markdown";
@@ -10,12 +10,14 @@ const text = `
 `
 
 export default function Registration(props) {
+    const [submited, setSubmited] = useState();
 
     function submit(e) {
         e.preventDefault();
         const form = new FormData(e.target)
         //console.log(form.entries())
         props.api('/registration',form)
+            .then(()=>setSubmited(true))
     }
 
     function files(e){
@@ -25,13 +27,16 @@ export default function Registration(props) {
     }
 
     return <div className="registration">
-        <h1>Заявка
-            участника межрегиональной конференции
-            «Развитие Детства: консолидация во имя будущего»
-            в рамках гражданского межрегионального форума «За будущее России: современные вызовы и консолидация регионов», посвященного Десятилетию детства в Российской Федерации
-            (г. Якутск, 16-22 ноября 2020 г.)</h1>
-        <form onSubmit={submit}>
 
+        {submited && <h2 className="alert alert-success text-center">Спасибо! Ваша заявка принята!</h2>}
+        {submited || <form onSubmit={submit}>
+            <h1>Заявка
+                участника межрегиональной конференции
+                <br/>«ИНВЕСТИЦИИ В РАННЕЕ ДЕТСТВО - ОСНОВА БУДУЩЕГО»
+                <br/>в рамках гражданского межрегионального форума
+                <br/>«За будущее России: современные вызовы и консолидация регионов»,
+                <br/>посвященного Десятилетию детства в Российской Федерации
+                (г. Якутск, 16-22 ноября 2020 г.)</h1>
             <table>
                 <tbody>
                 <tr>
@@ -111,7 +116,7 @@ export default function Registration(props) {
             <div><strong className="text-danger">Скопируйте все документы в одну папку и загрузите их все за 1 раз (используйте Shift+Click или Ctrl+Click при выборе файлов)</strong></div>
             <hr/>
             <Button>Отправить</Button>
-        </form>
+        </form>}
 
     </div>
 

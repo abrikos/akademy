@@ -13,7 +13,7 @@ export default function RegistrationList(props) {
     console.log(schema)
 
     return <div>
-        <h1>Список регистраций "Развитие Детства: консолидация во имя будущего"</h1>
+        <h1>Список регистраций «ИНВЕСТИЦИИ В РАННЕЕ ДЕТСТВО - ОСНОВА БУДУЩЕГО»</h1>
 
         <div className="alert alert-info">Для того чтобы зафиксировать свое присутствие на курсе оставьте комментарий "Присутствовал(а)" к соответствющему видео на YouTube</div>
         {schema && list && list.list.map(l => <div key={l.id}>
