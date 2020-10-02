@@ -44,6 +44,47 @@ module.exports.controller = function (app) {
         });
     });
 
+    app.post('/api/registration', (req, res) => {
+        const fileName = new Date().valueOf();
+        const attachments = [];
+        let i = 0;
+        if(req.files) {
+            for (const file of req.files.files) {
+                const path = `/tmp/${fileName}-${i}`;
+                file.mv(path);
+                attachments.push({path, filename: file.name})
+                i++;
+            }
+        }
+        const schema = Mongoose.registration.schema;
+        const fields = Object.keys(schema.paths)
+            .filter(key => schema.paths[key].options.label)
+        let text = '';
+        for(const key of fields){
+            text += `${schema.paths[key].options.label}: ${req.body[key]||''}\n`
+        }
+        //console.log(req.body)
+        //return res.send(200)
+        Mongoose.registration.create(req.body)
+
+
+        const message = {
+            from: mailer.auth.user,
+            to: "yra_semen1109@mail.ru",
+            subject: "Регистрация. За будущее России: современные вызовы и консолидация регионов",
+            text,
+            attachments
+        };
+
+        transport.sendMail(message, (error) => {
+            if (error) return res.send(app.locals.sendError(error));
+            for(const file of attachments)
+                fs.unlinkSync(file.path);
+            res.send({ok: 200});
+
+        });
+    });
+
     app.post('/api/feedback/options', (req, res) => {
         res.send(options)
     });
