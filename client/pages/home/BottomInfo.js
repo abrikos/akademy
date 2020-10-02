@@ -21,7 +21,8 @@ export default function BottomInfo(props) {
         </div>
         <div className="bottom-col">
             <h3>КОНТАКТЫ</h3>
-            <Phone phone={'+7(4122)33-57-11'}/>
+            {/*<Phone phone={'+7(4122)33-57-11'}/>*/}
+            <Phone phone={'7 924 868-37-11'}/>
             <Email email={'secretary@yakutia.science'}/>
             <Email email={'anrsya@mail.ru'}/>
             <Address
