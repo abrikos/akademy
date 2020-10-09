@@ -28,7 +28,7 @@ export default function Council(props) {
     return <div className="phone-book">
         <h1>{data.name} <AdminLink model={data} {...props}/></h1>
 
-        <div className="d-sm-block d-none">
+        {/*<div className="d-sm-block d-none">
             <Nav tabs>
                 <NavItem><span className={`nav-link ${voice === -1 ? 'active' : ''}`} onClick={() => selectDivision(-1)}>Все</span></NavItem>
                 {councilVoices.map((d, i) => <NavItem key={i}><span className={`nav-link  ${voice === i ? 'active' : ''}`} onClick={() => selectDivision(d.value)}>{d.label}</span></NavItem>)}
@@ -38,7 +38,7 @@ export default function Council(props) {
         <Input type="select" onChange={e => selectDivision(e.target.value)} className="d-sm-none d-block">
             <option value={''}>Все</option>
             {councilVoices.map((d, i) => <option key={i} value={d.value}>{d.label}</option>)}
-        </Input>
+        </Input>*/}
         <div className="d-flex flex-wrap">
             {data.chief && <PersonSmall councilStatus={'Председатель'} person={data.chief} {...props}/>}
             {/*{data.deputy && <PersonSmall councilStatus={'Заместитель'} person={data.deputy} {...props}/>}*/}
