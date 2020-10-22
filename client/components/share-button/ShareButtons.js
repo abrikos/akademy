@@ -16,7 +16,7 @@ export default function ShareButtons(props) {
 
 
     return <div>
-        <h3 className="text-center">Скопировать ссылку на статьюijcct</h3>
+        <h3 className="text-center">Скопировать ссылку на статью</h3>
         <code>{link}</code>
         <CopyButton text={link}/>
         <h3 className="text-center">Поделись с друзьями</h3>
