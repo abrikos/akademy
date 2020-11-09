@@ -157,7 +157,7 @@ export default function (props) {
         </div>
         <div className="col-2">
             <h3>Превью</h3>
-            <div style={{height: 200}}>{(post.preview || post.imgUrl) && <img src={post.preview.path || post.imgUrl } alt={post.preview.path || post.imgUrl } className="img-fluid"/>}</div>
+            <div style={{height: 200}}>{(post.preview || post.imgUrl) && <img src={(post.preview && post.preview.path) || post.imgUrl } alt="post preview image" className="img-fluid"/>}</div>
             <ImageUpload uploadDone={uploadDone} editable={true} {...props}/>
             <h3>Изображения</h3>
             <small>Перетащите в текст или пкм "Скопировать" - "Вставить"</small>
