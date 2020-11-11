@@ -48,7 +48,7 @@ export default function PostView(props) {
             {post.images.filter(i => !i.isImage).map(i => <a href={i.path} key={i.id}>{i.description}</a>)}
             <hr/>
 
-            <ShareButtons link={apiLink}/>
+            <ShareButtons site={'https://asrsya.ru'} link={apiLink}/>
 
         </div>
     </div>

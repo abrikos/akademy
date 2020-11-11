@@ -4,7 +4,7 @@ import "./share-button.sass"
 import CopyButton from "client/components/copy-button/CopyButton";
 
 export default function ShareButtons(props) {
-    const link = window.location.origin + props.link;
+    const link = (props.site || window.location.origin) + props.link;
     const blogs = [
         {row: 0, col: 1, link: 'https://vk.com/share.php?url='},
         {row: 0, col: 2, link: 'https://www.facebook.com/sharer/sharer.php?u='},
