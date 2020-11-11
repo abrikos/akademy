@@ -40,7 +40,6 @@ import Fortran from "client/pages/fortran/Fortran";
 import JournalGroup from "client/pages/JournalGroup";
 import Conference from "client/pages/conference/Conference";
 import ConferencePerson from "client/pages/conference/ConferencePerson";
-import ConferenceForm from "client/pages/conference/ConferenceForm";
 import Power8 from "client/pages/power8/Power8";
 import Noc from "client/pages/projects/noc/Noc";
 import CountDown from "client/pages/countdown/CountDown";
@@ -105,7 +104,7 @@ export default function Routes(props) {
         "/fortran": (params) => <Fortran {...props}/>,
         "/conference": (params) => <Conference {...props}/>,
         "/power8": (params) => <Power8 {...props}/>,
-        "/conference/registration": (params) => <ConferenceForm {...props}/>,
+        //"/conference/registration": (params) => <ConferenceForm {...props}/>,
         "/conference/:id/:name": (params) => <ConferencePerson {...params} {...props}/>,
     };
 }
