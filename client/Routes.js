@@ -74,7 +74,7 @@ export default function Routes(props) {
         "/news": () => <NewsPage {...props}/>,
         "/video": () => <VideoList {...props}/>,
         "/edition": () => <Edition {...props}/>,
-        "/registration": () => <Registration {...props}/>,
+        //"/registration": () => <Registration {...props}/>,
         "/registration/list": () => <RegistrationList {...props}/>,
         "/presidium/:type": (params) => <Presidium {...params} {...props}/>,
         "/static/:path": (params) => <PostView {...params} {...props}/>,
