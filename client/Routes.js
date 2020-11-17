@@ -46,6 +46,7 @@ import CountDown from "client/pages/countdown/CountDown";
 import Lecture from "client/pages/lecture/Lecture";
 import Registration from "client/pages/registration/Registration";
 import RegistrationList from "client/pages/registration/RegistrationList";
+import Vilui from "./pages/vilui/Vilui";
 
 export default function Routes(props) {
 
@@ -80,6 +81,7 @@ export default function Routes(props) {
         "/static/:path": (params) => <PostView {...params} {...props}/>,
         "/news/:id": (params) => <PostView {...params} {...props}/>,
         "/news/:id/:path": (params) => <PostView {...params} {...props}/>,
+        "/vilui": (params) => <Vilui {...params} {...props}/>,
 
         "/documents/:type": (params) => <Documents {...params} {...props}/>,
         "/project/recycle": () => <ProjectRecycle {...props}/>,

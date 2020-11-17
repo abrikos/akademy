@@ -1,9 +1,10 @@
 import Mongoose from "server/db/Mongoose";
 import moment from "moment"
+import util from "util"
 
 const logger = require('logat');
 const passportLib = require('server/lib/passport');
-const ogs = require('open-graph-scraper');
+const ogs = util.promisify(require('open-graph-scraper'));
 //Mongoose.post.findOne({_id:'5e6b377260ee8707805367b6'})    .populate('token')    .then(console.log)
 
 module.exports.controller = function (app) {
@@ -44,7 +45,7 @@ module.exports.controller = function (app) {
     });
 
     app.get('/api/post/noc', (req, res) => {
-        Mongoose.post.find({isNoc:true})
+        Mongoose.post.find({isNoc: true})
             .then(count => res.send(count))
             .catch(e => res.send(app.locals.sendError(e)))
     });
@@ -55,22 +56,46 @@ module.exports.controller = function (app) {
         Mongoose.post.create({user, header}).then(post => res.send(post))
     });
 
-    function getMeta(url, cb) {
-        ogs({url}, (e, r, re) => {
-            cb(r)
-        })
+    async function getMeta(url, cb) {
+        return await ogs({url})
     }
+
+    app.post('/api/news/from/urls', async (req, res) => {
+        if(!Array.isArray(req.body)) return res.send([])
+        const arr = []
+        for(const url of req.body){
+            console.log(url)
+            try{
+                console.log(url)
+                const c  = await ogs({url});
+                console.log('zzzzzzzzzzzzzzzz',c)
+                arr.push(c)
+            }catch (e) {
+                console.log('EEEERRRR', e)
+            }
+
+        }
+        res.send(arr)
+    })
 
     //getMeta('http://192.168.2.1/admin/index.html#/home', r=>{    })
 
     app.post('/api/post/create-from-link', passportLib.isAdmin, async (req, res) => {
         const user = req.session.userId;
-        getMeta(req.body.smiLink, r => {
-            if (!r.ogTitle) return res.sendStatus(404);
-            Mongoose.post.create({user, imgUrl: r.ogImage.url, header: r.ogTitle, text: r.ogDescription, published: true, isMassMedia: true, url: req.body.smiLink})
-                .then(post => res.send(post))
+        const r = await getMeta(req.body.smiLink)
+        if (!r.ogTitle) return res.sendStatus(404);
+        Mongoose.post.create({
+            user,
+            imgUrl: r.ogImage.url,
+            header: r.ogTitle,
+            text: r.ogDescription,
+            published: true,
+            isMassMedia: true,
+            url: req.body.smiLink
         })
-    });
+            .then(post => res.send(post))
+    })
+
 
     app.post('/api/post/:id/image-preview/:image', passportLib.isAdmin, (req, res) => {
         if (!Mongoose.Types.ObjectId.isValid(req.params.id)) return res.send(app.locals.sendError({message: 'Wrong id'}))
