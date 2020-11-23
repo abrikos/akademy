@@ -84,9 +84,9 @@ module.exports.controller = function (app) {
         if (!r.title) return res.send({error:500, message:'No title'});
         Mongoose.post.create({
             user,
-            imgUrl: r.image.url,
-            header: r.title,
-            text: r.description,
+            imgUrl: Array.isArray(r.image.url) ? r.image.url[0] : r.image.url,
+            header: Array.isArray(r.title) ? r.title[0] : r.title,
+            text: Array.isArray(r.description) ? r.description[0] : r.description,
             published: true,
             isMassMedia: true,
             url: req.body.smiLink
