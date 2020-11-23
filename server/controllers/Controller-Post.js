@@ -4,7 +4,9 @@ import util from "util"
 
 const logger = require('logat');
 const passportLib = require('server/lib/passport');
-const ogs = util.promisify(require('open-graph-scraper'));
+const ogs1 = require('open-graph');
+//const ogs1 = require('open-graph-scraper');
+const ogs = util.promisify(ogs1);
 //Mongoose.post.findOne({_id:'5e6b377260ee8707805367b6'})    .populate('token')    .then(console.log)
 
 module.exports.controller = function (app) {
@@ -57,25 +59,20 @@ module.exports.controller = function (app) {
     });
 
     async function getMeta(url, cb) {
-        return await ogs({url})
+        return await ogs(url)
     }
 
-    app.post('/api/news/from/urls', async (req, res) => {
-        if(!Array.isArray(req.body)) return res.send([])
-        const arr = []
-        for(const url of req.body){
-            console.log(url)
-            try{
-                console.log(url)
-                const c  = await ogs({url});
-                console.log('zzzzzzzzzzzzzzzz',c)
-                arr.push(c)
-            }catch (e) {
-                console.log('EEEERRRR', e)
-            }
-
+    app.post('/api/news/from/url', async (req, res) => {
+        //if(!Array.isArray(req.body)) return res.send([])
+        let topic = {};
+        console.log(req.body)
+        try {
+            topic = await ogs(req.body.url);
+            console.log(topic)
+        } catch (e) {
+            console.log('EEEERRRR', e)
         }
-        res.send(arr)
+        res.send(topic)
     })
 
     //getMeta('http://192.168.2.1/admin/index.html#/home', r=>{    })
@@ -83,12 +80,13 @@ module.exports.controller = function (app) {
     app.post('/api/post/create-from-link', passportLib.isAdmin, async (req, res) => {
         const user = req.session.userId;
         const r = await getMeta(req.body.smiLink)
-        if (!r.ogTitle) return res.sendStatus(404);
+        console.log(r)
+        if (!r.title) return res.send({error:500, message:'No title'});
         Mongoose.post.create({
             user,
-            imgUrl: r.ogImage.url,
-            header: r.ogTitle,
-            text: r.ogDescription,
+            imgUrl: r.image.url,
+            header: r.title,
+            text: r.description,
             published: true,
             isMassMedia: true,
             url: req.body.smiLink

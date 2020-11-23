@@ -18,6 +18,7 @@ const modelSchema = new Schema({
         isMassMedia: {type: Boolean, label: 'СМИ о нас'},
         isElection: {type: Boolean, label: 'Выборы'},
         isNoc: {type: Boolean, label: 'НОЦ'},
+        isVilui: {type: Boolean, label: 'КНИ Вилюй'},
         isFixed: {type: Boolean, label: 'Фиксированная'},
         views: {type: Number, default: 0},
         user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},

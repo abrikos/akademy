@@ -3,6 +3,8 @@ import about from "./about"
 import Works from "./Works"
 import MarkDown from "react-markdown";
 import PersonSmall from "../people/PersonSmall";
+import PostSmall from "../news/PostSmall";
+import "./vilui.sass";
 
 const links = [
     'https://regnum.ru/news/society/2519620.html',
@@ -27,6 +29,7 @@ export default function Vilui(props) {
     const [news, setNews] = useState([])
     const ids = Works.map(w => w.bossId)
     ids.push('5f6037690d67ea51507b6301')
+
     useEffect(() => {
         props.api('/person/list', {where: {_id: {$in: ids}}}).then(r => {
             setBossess(r.list)
@@ -34,32 +37,34 @@ export default function Vilui(props) {
                 w.boss = r.list.find(b => b.id === w.bossId);
                 return w;
             })
-            console.log(ids)
             setWorks(wo)
-
         })
-        props.api('/news/from/urls', links)
-            .then(setNews)
+        props.api('/post/list',{where:{isVilui:true}})
+            .then(r=>setNews(r.list))
+
     }, [])
 
-    console.log('zzzzzzzzzz', news)
     if (!works) return <div/>
 
 
-    return <div>
+    return <div className="kni-vilui">
         <h1>Программа Комплексных научных исследований экологического состояния Вилюйской группы улусов</h1>
         <h2>О ПРОГРАММЕ</h2>
         <MarkDown source={about}/>
+        <hr/>
 
         <h2>НАУЧНО-ИССЛЕДОВАТЕЛЬСКИЕ РАБОТЫ</h2>
         {works.map((w, i) => <div key={i}>
-            <h3>{w.name}</h3>
-            <div className="row">
-                <div className="col-sm-4">
+
+            <div>
+                <div className="float-sm-right m-sm-5">
                     Научный руководитель НИР:
                     <PersonSmall person={w.boss} presidium={true} {...props}/>
                 </div>
-                <div className="col-sm-8"><MarkDown source={w.info}/></div>
+                <div>
+                    <h3>{i+1}. {w.name}</h3>
+                    <MarkDown source={w.info}/>
+                </div>
             </div>
 
         </div>)}
@@ -77,9 +82,15 @@ export default function Vilui(props) {
         разработкой комплекса медико-социальных мероприятий по оздоровлению.
         «Оценка возможности обеспечения альтернативными источниками водоснабжения населенных пунктов в долине р. Вилюй и
         ее притоков.
-        ДОКУМЕНТЫ
+        <hr/>
+        {/*<h2>ДОКУМЕНТЫ</h2>
+
+        <hr/>*/}
         <h2>НОВОСТИ</h2>
-        {news.map((n,i)=><div key={i}>{JSON.stringify(n)}</div>)}
+        <div className="d-sm-flex flex-wrap">
+            {news.map((n,i)=><PostSmall key={n.id} post={n}/>)}
+        </div>
+        <hr/>
 
         <h2>КОНТАКТЫ</h2>
         <PersonSmall person={bossess.find(b=>b.id==='5f6037690d67ea51507b6301')} presidium={true} {...props}/>

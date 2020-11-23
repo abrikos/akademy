@@ -96,6 +96,12 @@ export default function (props) {
                         Фиксированная
                     </Label>
                 </FormGroup>
+                <FormGroup check>
+                    <Label check>
+                        <Input type="checkbox" name="isVilui" defaultChecked={post.isVilui}/>
+                        КНИ Вилюй
+                    </Label>
+                </FormGroup>
 
                 {isMassMedia && <FormGroup>
                     <Label>Ссылка СМИ</Label>

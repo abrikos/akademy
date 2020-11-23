@@ -81,7 +81,7 @@ export default function Routes(props) {
         "/static/:path": (params) => <PostView {...params} {...props}/>,
         "/news/:id": (params) => <PostView {...params} {...props}/>,
         "/news/:id/:path": (params) => <PostView {...params} {...props}/>,
-        "/vilui": (params) => <Vilui {...params} {...props}/>,
+        "/kni-vilui": (params) => <Vilui {...params} {...props}/>,
 
         "/documents/:type": (params) => <Documents {...params} {...props}/>,
         "/project/recycle": () => <ProjectRecycle {...props}/>,
