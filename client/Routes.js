@@ -46,7 +46,7 @@ import CountDown from "client/pages/countdown/CountDown";
 import Lecture from "client/pages/lecture/Lecture";
 import Registration from "client/pages/registration/Registration";
 import RegistrationList from "client/pages/registration/RegistrationList";
-import Vilui from "./pages/vilui/Vilui";
+import Vilui from "./pages/kni-vilui/Vilui";
 
 export default function Routes(props) {
 
