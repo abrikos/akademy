@@ -13,6 +13,7 @@ export default function ThemeMenuHorizontal(props) {
             <footer>
                 {/*<YandexMetrica/>*/}
                 <BottomInfo/>
+                <div>2020.11.30</div>
             </footer>
         </div>
 
