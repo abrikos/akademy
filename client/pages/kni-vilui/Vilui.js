@@ -33,16 +33,18 @@ export default function Vilui(props) {
     return <div className="kni-vilui">
 
         <h1>Программа Комплексных научных исследований экологического состояния Вилюйской группы улусов</h1>
-        <Tabs defaultActiveKey={'works'}>
-            <Tab title={'Новости'} eventKey={'news'}>
-                <ViluiNews {...props}/>
-            </Tab>
+        <Tabs defaultActiveKey={'about'}>
             <Tab title={'О программе'} eventKey={'about'}>
                 <MarkDown source={about}/>
             </Tab>
             <Tab title={'Научно-исследовательские работы'} eventKey={'works'}>
                 <ViluiWorks works={works} {...props}/>
             </Tab>
+            <Tab title={'Новости'} eventKey={'news'}>
+                <ViluiNews {...props}/>
+            </Tab>
+
+
             <Tab title={'Контакты'} eventKey={'contacts'}>
                 <PersonSmall person={bossess.find(b => b.id === '5f6037690d67ea51507b6301')} presidium={true} {...props}/>
             </Tab>
