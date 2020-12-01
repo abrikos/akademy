@@ -18,7 +18,9 @@ export default function ViluiWorks(props) {
         </div>
         <div className="col">
             {worksView && <div>
+                {worksView.photo && <img src={worksView.photo} className="img-fluid" alt={worksView.name}/>}
                 <h3>{worksView.name}</h3>
+
                 <div className="">
                     Научный руководитель НИР:
                     <PersonSmall person={worksView.boss} presidium={true} {...props}/>
