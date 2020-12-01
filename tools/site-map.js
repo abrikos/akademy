@@ -7,6 +7,7 @@ async function siteMap() {
     map.push({label: 'Главная', path: '/', menu: true});
     map.push({label: 'Новости', path: '/news', menu: true});
     const divisions = await Mongoose.division.find({inMenu: true}).sort('name');
+    console.log(divisions)
     map.push({label: 'Структура', items: divisions.map(d => ({label: d.name, path: d.link})), menu: true});
     const meetings = await Mongoose.council.find({isJoined: true});
     map.push({
