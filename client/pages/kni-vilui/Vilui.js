@@ -72,7 +72,9 @@ export default function Vilui(props) {
 
 
             <Tab title={'Контакты'} eventKey={'contacts'}>
+                <div className="d-sm-flex">
                 {contacts.map(c => <PersonSmall person={c} key={c.id} {...props}/>)}
+                </div>
             </Tab>
 
         </Tabs>
