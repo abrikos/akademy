@@ -24,8 +24,8 @@ export default function VideoList(props) {
     if(!models) return <Loader/>
     return <div className="post-list">
         <h1>Видео</h1>
-        <div className="flex-wrap justify-content-center">
-            {models.map(m => <div className="m-2"><AdminLink model={m} {...props}/><VideoPlay key={m.id} video={m}/></div>)}
+        <div className="d-sm-flex flex-wrap justify-content-center">
+            {models.map(m => <div className="m-2 w-25"><AdminLink model={m} {...props}/><VideoPlay key={m.id} video={m}/>{m.name}</div>)}
         </div>
 
 

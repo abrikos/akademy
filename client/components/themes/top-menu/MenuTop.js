@@ -80,7 +80,7 @@ export default function MenuTop(props) {
                         <A href="/search" className={'nav-link'}><span role="img" aria-label="Search"><FontAwesomeIcon icon={faSearch}/></span></A>
                     </NavItem>
                     <NavItem >
-                        <a href="https://www.instagram.com/as.rsya/" target="_blank" rel="noopener noreferrer" className={'nav-link svg-circle'}><img src={Instagram} alt="Instagram"/></a>
+                        <a href="https://www.instagram.com/academy_of_sciences/" target="_blank" rel="noopener noreferrer" className={'nav-link svg-circle'}><img src={Instagram} alt="Instagram"/></a>
                     </NavItem>
                     <NavItem >
                         <A href="/video" className={'nav-link svg-circle'}><img src={YouTube} alt="Видео"/></A>
