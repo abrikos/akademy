@@ -50,6 +50,7 @@ export default function InputModel(props) {
             {props.model[props.field.name] && <AdminLink model={props.model[props.field.name]} isAdmin={true}/>}
         </div>
     }
+    console.log(props.field.name, JSON.stringify(props.field))
     if (['hasMany', 'virtual'].includes(props.field.type)) {
         input = <InputHasMany value={props.model[props.field.name]} list={list} {...props}/>
     }

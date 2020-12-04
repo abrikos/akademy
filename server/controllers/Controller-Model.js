@@ -153,7 +153,10 @@ module.exports.controller = function (app) {
                         for (const id of r[f].map(r => r.id).filter(r => !req.body[f].includes(r))) {
                             //DELETE
                             const model = await Mongoose[field.options.ref.toLowerCase()].findById(id)
-                            model[fieldToUpdate] = model[fieldToUpdate].filter(r => !r.equals(req.params.id))
+                            if(model[fieldToUpdate].filter)
+                                model[fieldToUpdate] = model[fieldToUpdate].filter(r => !r.equals(req.params.id))
+                            else
+                                model[fieldToUpdate] = null;
                             await model.save()
                         }
                         for (const id of req.body[f]) {
