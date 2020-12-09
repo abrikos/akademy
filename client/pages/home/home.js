@@ -7,7 +7,9 @@ import FeedbackForm from "client/pages/home/FeedbackForm";
 import "./home.sass"
 import woman from "./research/woman.jpeg"
 import intell from "./intellectual/home2.jpeg"
+import vilui from "client/pages/kni-vilui/images/1.png"
 import DateFormat from "client/components/DateFormat";
+
 
 export default function Home(props) {
     const [news, setNews] = useState([]);
@@ -79,9 +81,9 @@ export default function Home(props) {
         </div>
         <hr/>
 
-        <div className=" my-5">
-            <h1 className="text-center my-3">Наши цели</h1>
-            <div className="d-sm-flex">
+        <div className="my-5">
+            <h1 className="text-center my-3">Проекты</h1>
+            <div className="d-sm-flex flex-wrap justify-content-center">
                 <div className="mx-5">
                     <img src={woman} alt="Интеллектуальная собственность" className="img-fluid"/>
                     <h2>Комплексные научные исследования</h2>
@@ -96,6 +98,14 @@ export default function Home(props) {
                     Центр интеллектуальной собственности РС(Я) осуществляет патентно-информационные работы и исследования по обоснованию принимаемых решений в отношении интеллектуальной собственности; осуществляет нормативно-методическое обеспечение работы по охране интеллектуальной собственности.
                     <br/>
                     <A href={'/intellectual'}>ПОДРОБНЕЕ <FontAwesomeIcon icon={faArrowRight}/></A>
+                </div>
+
+                <div className="mx-5">
+                    <img src={vilui} alt="КНИ Вилюй" className="img-fluid"/>
+                    <h2>КНИ Вилюй</h2>
+                    Программа Комплексных научных исследований экологического состояния Вилюйской группы улусов и здоровья населения, проживающего на этих территориях, разработана во исполнение Указа Указ Главы Республики Саха (Якутия) от 27 сентября 2018 г. №2 «Об экологическом благополучии РС(Я)» на 2019-2024 годы» в целях сохранения окружающей среды в условиях нарастания антропогенного и технического воздействия на окружающую среду, изменения климата.
+                    <br/>
+                    <A href={'/kni-vilui'}>ПОДРОБНЕЕ <FontAwesomeIcon icon={faArrowRight}/></A>
                 </div>
             </div>
         </div>
