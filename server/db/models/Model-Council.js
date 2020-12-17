@@ -13,7 +13,7 @@ const modelSchema = new Schema({
         deputy: {type: mongoose.Schema.Types.ObjectId, ref: 'Person', label: 'Заместитель', property: 'fioShort', sort: {fname: 1}},
         secretary: {type: mongoose.Schema.Types.ObjectId, ref: 'Person', label: 'Секретарь', property: 'fioShort', sort: {fname: 1}},
         persons: [{type: mongoose.Schema.Types.ObjectId, ref: 'Person', label: 'Персоны', property: 'fioShort', sort: {fname: 1}}],
-        description: {type: String, label: 'Описание'},
+        description: {type: String, label: 'Описание', control:"markdown"},
     },
     {
         //timestamps: {createdAt: 'createdAt'},
