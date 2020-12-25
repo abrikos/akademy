@@ -58,6 +58,7 @@ export default function Vilui(props) {
                 <ViluiNews {...props}/>
             </Tab>
             <Tab title={'Документы'} eventKey={'docs'}>
+                <a href="https://drive.google.com/file/d/1tTrWmMfrcCXppDkAZwxmhTydmUlxD0HD/view?usp=sharing" target="_blank">Протокол заседания МК по контролю за реализациет мероприятий программы комплексных научных иследований эклогоического состояния Вилюйской группы улусов</a>
                 <a href="https://drive.google.com/file/d/1f1OkNt6zI39EurD54BGfjk_FwefrKyav/view?usp=sharing" target="_blank" className="d-block">Выписка из протокола No 5
 
                     заседания ОУС по медико-биологическим наукам
