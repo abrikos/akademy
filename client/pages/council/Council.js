@@ -3,6 +3,7 @@ import {Input, Nav, NavItem} from "reactstrap";
 import PersonSmall from "client/pages/people/PersonSmall";
 import AdminLink from "client/components/AdminLink";
 import Loader from "client/components/Loader";
+import MarkDown from "react-markdown";
 
 export default function Council(props) {
     const [data, setData] = useState();
@@ -27,7 +28,7 @@ export default function Council(props) {
     if (!data) return <Loader/>;
     return <div className="phone-book">
         <h1>{data.name} <AdminLink model={data} {...props}/></h1>
-
+        <MarkDown source={data.description}/>
         {/*<div className="d-sm-block d-none">
             <Nav tabs>
                 <NavItem><span className={`nav-link ${voice === -1 ? 'active' : ''}`} onClick={() => selectDivision(-1)}>Все</span></NavItem>
