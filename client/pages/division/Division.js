@@ -20,21 +20,21 @@ export default function Division(props) {
     return <div className="division" key={props.page}>
         <h1 className="text-uppercase">{data.name}</h1>
         <div className="row">
-            <div className="col-md-4 division-card">
+            {data.chief && <div className="col-md-4 division-card">
                 <div className="fio"><A href={data.chief.link}>{data.chief.fio}</A></div>
                 <div className="status">{data.chief.status}</div>
                 <div className="rank">{data.chief.rank}</div>
 
 
-            </div>
+            </div>}
 
         </div>
         <div className="row">
-            <div className="col-md-4 division-card">
+            {data.chief && <div className="col-md-4 division-card">
                 <picture>
                     <img key={props.page} src={data.chief.photo} alt={data.name}/>
                 </picture>
-            </div>
+            </div>}
             <div className="col-md-8 text">
                 <div>
                     <AdminLink model={data} {...props}/>
