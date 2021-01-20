@@ -10,7 +10,7 @@ const modelSchema = new Schema({
         year: {type:String, label:'Год'},
         format: {type:String, label:'Формат'},
         text: {type:String, label:'Описание', control:'markdown'},
-        //link: {type:String, label:'Ссылка'},
+        file: {type:String, label:'Ссылка'},
         order: {type:Number, label:'Порядок'},
         images: [{type: mongoose.Schema.Types.ObjectId, ref: 'Image'}],
         image: {type: mongoose.Schema.Types.ObjectId, ref: 'Image'},
