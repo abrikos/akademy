@@ -6,6 +6,7 @@ export default function DateFormat(props) {
 
     const date = moment(props.date)
     const diff = moment().diff(date, 'days');
+    return <span className="date">{date.format('DD.MM.YYYY')}</span>
     let result;
     switch(diff){
         case 0:
