@@ -14,13 +14,13 @@ async function playlistParse(id) {
     for (const pl of res.data.items) {
         const res2 = await axios(urlVideos + pl.id)
         for (const u of res2.data.items.reverse()) {
-
             const video = u.snippet
             const uid = video.resourceId.videoId;
             const found = await Mongoose.video.findOne({uid})
+            console.log('desc',video.title, ' --- ', video.description)
             if (found) continue;
             console.log(uid)
-            await Mongoose.video.create({uid, type: 'youtube', name: video.title + ' ' + video.description})
+            await Mongoose.video.create({uid, type: 'youtube', name: video.title, text: video.description})
         }
     }
 }
@@ -38,6 +38,11 @@ module.exports.controller = function (app) {
         loop()
     }, null, true, 'America/Los_Angeles');
 
+
+    app.post('/api/video/lector', (req, res) => {
+        Mongoose.video.findOne({uid:req.body.uid})
+            .then(r=>res.send(r))
+    });
 
     app.post('/api/admin/video/create', passportLib.isAdmin, (req, res) => {
         Mongoose.video.create({user: req.session.userId})

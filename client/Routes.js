@@ -47,12 +47,14 @@ import Lecture from "client/pages/lecture/Lecture";
 import Registration from "client/pages/registration/Registration";
 import RegistrationList from "client/pages/registration/RegistrationList";
 import Vilui from "./pages/kni-vilui/Vilui";
+import Lectors from "client/pages/lectors/Lectors";
 
 export default function Routes(props) {
 
     return {
         "/": () => <Home {...props}/>,
         "/gov": () => <Gov {...props}/>,
+        "/lector": () => <Lectors {...props}/>,
         "/lecture": () => <Lecture {...props}/>,
         "/science-org": () => <Organisations {...props}/>,
         "/partners": () => <Partners {...props}/>,
