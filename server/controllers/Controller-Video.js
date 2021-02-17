@@ -39,8 +39,8 @@ module.exports.controller = function (app) {
     }, null, true, 'America/Los_Angeles');
 
 
-    app.post('/api/video/lector', (req, res) => {
-        Mongoose.video.findOne({uid:req.body.uid})
+    app.post('/api/video/lectors', (req, res) => {
+        Mongoose.video.find({uid: {$in: req.body.uids}})
             .then(r=>res.send(r))
     });
 
