@@ -37,19 +37,23 @@ module.exports.controller = function (app) {
     const job = new app.locals.CronJob('0 0 * * * *', async function () {
         loop()
     }, null, true, 'America/Los_Angeles');
-
+    const lectors = [
+        'O9vxcq1IgHI',
+        'itcQP_O5WQ4',
+        'Tv9Lgty2kFw',
+        'HBqXZgvo3zc',
+        'IDgcDuHpReQ',
+        'S1Q4ujriDto',
+        'xjzNFi3IiZo',
+    ]
 
     app.post('/api/video/lectors', (req, res) => {
-        const uids = [
-            'O9vxcq1IgHI',
-            'itcQP_O5WQ4',
-            'Tv9Lgty2kFw',
-            'HBqXZgvo3zc',
-            'IDgcDuHpReQ',
-            'S1Q4ujriDto',
-            'xjzNFi3IiZo',
-        ]
-        Mongoose.video.find({uid: {$in: uids}})
+        Mongoose.video.find({uid: {$in: lectors}})
+            .then(r=>res.send(r))
+    });
+
+    app.get('/api/video/lectors', (req, res) => {
+        Mongoose.video.find({uid: {$in: lectors}})
             .then(r=>res.send(r))
     });
 
