@@ -45,11 +45,12 @@ module.exports.controller = function (app) {
         'S1Q4ujriDto',
         'xjzNFi3IiZo',
     ]
-
+    console.log('00000000')
     app.post('/api/video/lectors', (req, res) => {
+        console.log('111111111')
         Mongoose.video.find({uid: {$in: lectors}})
             .then(r=> {
-                console.log(r)
+                console.log('zzzzzzzzz',r)
                 res.send(r)
             })
     });
