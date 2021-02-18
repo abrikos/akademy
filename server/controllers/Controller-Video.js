@@ -47,6 +47,8 @@ module.exports.controller = function (app) {
         'xjzNFi3IiZo',
     ]
 
+    Mongoose.video.find({uid: {$in: lectors}})
+        .then(console.log)
     app.post('/api/video/lectors', (req, res) => {
         Mongoose.video.find({uid: {$in: lectors}})
             .then(r=>res.send(r))
