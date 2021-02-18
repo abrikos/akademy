@@ -15,8 +15,8 @@ export default function Lectors(props) {
 
     return <div className="container">
         <h1>Лекторы</h1>
-        {videos.map((v, i) => <div className="alert alert-info my-5">
-            <div key={i} className="row">
+        {videos.map((v, i) => <div className="alert alert-info my-5" key={i}>
+            <div  className="row">
                 <div className="col-sm-3">
                     <img src={`/lectors/${v.uid}.png`} className="img-fluid" style={{width: "100%"}}/>
 

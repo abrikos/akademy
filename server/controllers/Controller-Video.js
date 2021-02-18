@@ -45,15 +45,14 @@ module.exports.controller = function (app) {
         'S1Q4ujriDto',
         'xjzNFi3IiZo',
     ]
-    console.log('00000000')
-    /*app.post('/api/video/lectors', (req, res) => {
-        console.log('111111111')
+
+    app.post('/api/video/lectors', (req, res) => {
         Mongoose.video.find({uid: {$in: lectors}})
             .then(r=> {
                 console.log('zzzzzzzzz',r)
-                res.send(r)
+                res.send([])
             })
-    });*/
+    });
 
     app.post('/api/admin/video/create', passportLib.isAdmin, (req, res) => {
         Mongoose.video.create({user: req.session.userId})
