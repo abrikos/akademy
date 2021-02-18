@@ -50,7 +50,7 @@ module.exports.controller = function (app) {
         Mongoose.video.find({uid: {$in: lectors}})
             .then(r=> {
                 console.log('zzzzzzzzz',r)
-                res.send([])
+                res.send(r)
             })
     });
 
