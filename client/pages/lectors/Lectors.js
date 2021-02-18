@@ -3,22 +3,13 @@ import VideoPlay from "client/components/VideoPlay";
 
 export default function Lectors(props) {
     const [videos, setVideos] = useState([])
-    const uids = [
-        'O9vxcq1IgHI',
-        'itcQP_O5WQ4',
-        'Tv9Lgty2kFw',
-        'HBqXZgvo3zc',
-        'IDgcDuHpReQ',
-        'S1Q4ujriDto',
-        'xjzNFi3IiZo',
-    ]
 
     useEffect(() => {
         init()
     }, []);
 
     async function init() {
-        const video = await props.api('/video/lectors', {uids})
+        const video = await props.api('/video/lectors')
         setVideos(video)
     }
 

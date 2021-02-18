@@ -40,7 +40,16 @@ module.exports.controller = function (app) {
 
 
     app.post('/api/video/lectors', (req, res) => {
-        Mongoose.video.find({uid: {$in: req.body.uids}})
+        const uids = [
+            'O9vxcq1IgHI',
+            'itcQP_O5WQ4',
+            'Tv9Lgty2kFw',
+            'HBqXZgvo3zc',
+            'IDgcDuHpReQ',
+            'S1Q4ujriDto',
+            'xjzNFi3IiZo',
+        ]
+        Mongoose.video.find({uid: {$in: uids}})
             .then(r=>res.send(r))
     });
 
