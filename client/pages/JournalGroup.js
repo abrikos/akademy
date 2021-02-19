@@ -8,7 +8,7 @@ export default function (props) {
 
         <strong>Академия наук РС (Я) является соучредителем 2-ух периодических журналов: «Природные ресурсы Арктики и Субарктики», «Наука и техника в Якутии».</strong>
 
-        <h3>Научный журнал «Природные ресурсы Арктики и Субактики»</h3>
+        <h3>Научный журнал «Природные ресурсы Арктики и Субарктики»</h3>
         (Arctic and Subarctic Natural Resources)
         <div className="row">
             <div className="col-sm-3"><img src="https://lh6.googleusercontent.com/HAZyYMtQ_Z2DIQevCj2QO9ogOjkrWc1lIaFFPq4dakXqATDeQ7e52lPOz9pHfRuRALI8vUiGwm3JrgeZ5tmFFByYkt3dG8nA7h-JSSeo7faHGMf1AA2XdXO4SH4oszZDxIxBfiStXTyvb45mdA" alt={'cover'}  className="img-fluid"/></div>
