@@ -30,12 +30,16 @@ export default function Division(props) {
 
         </div>
         <div className="row">
-            {data.chief && <div className="col-md-4 division-card">
-                <picture>
-                    <img key={props.page} src={data.chief.photo} alt={data.name}/>
-                </picture>
-                <MarkDown source={data.underPhoto}/>
-            </div>}
+            <div className="col-md-4">
+                {data.chief && <div className="division-card">
+                    <picture>
+                        <img key={props.page} src={data.chief.photo} alt={data.name}/>
+                    </picture>
+
+                </div>}
+                <div className="mt-5"><MarkDown source={data.underPhoto}/></div>
+
+            </div>
             <div className="col-md-8 text">
                 <div>
                     <AdminLink model={data} {...props}/>
