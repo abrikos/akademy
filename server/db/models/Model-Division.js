@@ -15,6 +15,7 @@ const modelSchema = new Schema({
         noPhoneBook: {type: Boolean, label: 'Не показывать в тел.книге'},
         chief: {type: mongoose.Schema.Types.ObjectId, ref: 'Person', property:'fioShort', sort:{fname:1}, label:'Руководитель'},
         description: {type: String, label: 'Описание', control:'markdown'},
+        underPhoto: {type: String, label: 'Под фото', control:'markdown'},
         persons: [{type: mongoose.Schema.Types.ObjectId, ref: 'Person', label:'Сотрудники', property:'fio', sort:{fname:1}}],
         images: [{type: mongoose.Schema.Types.ObjectId, ref: 'Image', label:'Файлы'}],
     },

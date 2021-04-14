@@ -34,6 +34,7 @@ export default function Division(props) {
                 <picture>
                     <img key={props.page} src={data.chief.photo} alt={data.name}/>
                 </picture>
+                <MarkDown source={data.underPhoto}/>
             </div>}
             <div className="col-md-8 text">
                 <div>
