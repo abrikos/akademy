@@ -10,6 +10,7 @@ export default function (props) {
             <li><a href="http://portal.mammothportal.org" target="_blank" rel="noopener noreferrer">Портал мамонтовой фауны</a></li>
             <li><a href="https://nec.yakutia.science" target="_blank" rel="noopener noreferrer">Научно-образовательный центр ГБУ "Академия наук Республики Саха (Якутия)"</a></li>
             <li><a href="https://nras.asrsya.ru" target="_blank" rel="noopener noreferrer">Природные ресурсы Арктики и Субарктики</a></li>
+            <li><a href="https://nocsever.com/" target="_blank" rel="noopener noreferrer">Научно-образовательный центр «Север: территория устойчивого развития»</a></li>
         </ul>
     </div>
 }
