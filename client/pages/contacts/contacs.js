@@ -30,7 +30,7 @@ export default function Contacts(props) {
                 </div>
                 <div className="row">
                     <div className="col">Электронная почта</div>
-                    <div className="col"><Email email={'secretary@yakutia.science'}/></div>
+                    <div className="col"><Email email={'anrsya@mail.ru'}/></div>
                 </div>
 
             </div>
