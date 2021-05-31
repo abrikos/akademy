@@ -48,6 +48,7 @@ import Registration from "client/pages/registration/Registration";
 import RegistrationList from "client/pages/registration/RegistrationList";
 import Vilui from "./pages/kni-vilui/Vilui";
 import Lectors from "client/pages/lectors/Lectors";
+import AntiCorruption from "./pages/AntiCorruption";
 
 export default function Routes(props) {
 
@@ -91,6 +92,7 @@ export default function Routes(props) {
         "/project/sakha-history/:tom": (params) => <SakhaHistory {...params} {...props}/>,
         "/apparatus": () => <Apparatus {...props}/>,
         "/journal": () => <JournalGroup {...props}/>,
+        "/anti-corruption": () => <AntiCorruption {...props}/>,
         //"/persons/:type": (params) => <PersonListLarge {...params} {...props}/>,
         "/site-map": () => <SiteMap {...props}/>,
         "/static/:page": (params) => <Static {...params} {...props}/>,

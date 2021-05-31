@@ -58,6 +58,7 @@ async function siteMap() {
             //{label: 'Выборы', path: '/election', className: 'text-danger'},
 
             {label: 'Об Академии', path: '/about'},
+            {label: 'Противодействие коррупции', path: '/anti-corruption'},
             {label: 'Веб-ресурсы академии', path: '/web-resources'},
             {label: 'Научные учреждения', path: '/science-org'},
             {label: 'Научные журналы', path: '/journal'},
