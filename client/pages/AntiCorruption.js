@@ -1,10 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
+import {Nav} from "react-bootstrap";
 
 export default function AntiCorruption(){
+    const [tab, setTab] = useState()
     return <div>
-        <h1>СВЕДЕНИЯ
+        <Nav variant="tabs" onSelect={setTab} className="flex-column">
+            <Nav.Item>
+                <Nav.Link eventKey="sved">СВЕДЕНИЯ                    о доходах</Nav.Link>
+            </Nav.Item>
+
+        </Nav>
+
+        {tab==='sved' && <div>        <h1>СВЕДЕНИЯ
             о доходах, об имуществе и обязательствах имущественного характера , руководителей Государственного бюджетного учреждения  «Академия наук РС(Якутии)», размещаемые  на официальном сайте ГБУ Академии наук РС(Я) в Порядке, утвержденном Приказом Минтруда России от 07.10.2013г. №530н, за период с 01 января  2020 года по 31 декабря 2020 года.</h1>
-        <table className="table">
+        <table className="table table-bordered">
+            <tbody>
             <tr valign="top">
                 <td rowSpan="2" width="32" ><p align="center">
                     №</p>
@@ -204,7 +214,8 @@ export default function AntiCorruption(){
                     <font face="Times New Roman, serif"><font size="2" >-</font></font></p>
                 </td>
             </tr>
+            </tbody>
         </table>
-
+        </div>}
     </div>
 }
