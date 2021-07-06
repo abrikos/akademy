@@ -8,7 +8,7 @@ import {Tab, Tabs} from "react-bootstrap";
 import ViluiNews from "client/pages/kni-vilui/ViluiNews";
 import ViluiWorks from "client/pages/kni-vilui/ViluiWorks";
 import quotes from "./quotes"
-import i1 from "./images/1.png"
+import i1 from "./images/1.jpg"
 
 export default function Vilui(props) {
     const [works, setWorks] = useState()

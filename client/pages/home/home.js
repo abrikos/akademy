@@ -7,7 +7,7 @@ import FeedbackForm from "client/pages/home/FeedbackForm";
 import "./home.sass"
 import woman from "./research/woman.jpeg"
 import intell from "./intellectual/home2.jpeg"
-import vilui from "client/pages/kni-vilui/images/1.png"
+import vilui from "client/pages/kni-vilui/images/1.jpg"
 import DateFormat from "client/components/DateFormat";
 
 
