@@ -49,7 +49,7 @@ modelSchema.virtual('adminLink')
 
 modelSchema.virtual('personsWithChief')
     .get(function () {
-        return [this.chief].concat(this.persons);
+        return this.chief && this.chief.id ? [this.chief].concat(this.persons) : this.persons;
     });
 
 
