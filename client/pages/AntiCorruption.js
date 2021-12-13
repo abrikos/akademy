@@ -4,9 +4,11 @@ import {Nav} from "react-bootstrap";
 export default function AntiCorruption(){
     const [tab, setTab] = useState()
     return <div>
+        <h1>Противодействие коррупции</h1>
         <Nav variant="tabs" onSelect={setTab} className="flex-column">
             <Nav.Item>
-                <Nav.Link eventKey="sved">СВЕДЕНИЯ                    о доходах</Nav.Link>
+                <Nav.Link eventKey="sved">СВЕДЕНИЯ о доходах</Nav.Link>
+                <Nav.Link href="https://drive.google.com/file/d/1cV7GfX-_Th1CKjraTPvV1towjNocZem1/view?usp=sharing">Об антикоррупционной экспертизе нормативных актов и проектов нормативных актов</Nav.Link>
             </Nav.Item>
 
         </Nav>

@@ -49,6 +49,7 @@ import RegistrationList from "client/pages/registration/RegistrationList";
 import Vilui from "./pages/kni-vilui/Vilui";
 import Lectors from "client/pages/lectors/Lectors";
 import AntiCorruption from "./pages/AntiCorruption";
+import NecSert from './pages/nec/NecSert';
 
 export default function Routes(props) {
 
@@ -56,6 +57,7 @@ export default function Routes(props) {
         "/": () => <Home {...props}/>,
         "/gov": () => <Gov {...props}/>,
         "/lector": () => <Lectors {...props}/>,
+        "/nec-cert": () => <NecSert {...props}/>,
         "/lecture": () => <Lecture {...props}/>,
         "/science-org": () => <Organisations {...props}/>,
         "/partners": () => <Partners {...props}/>,

@@ -24,6 +24,19 @@ const options = [
 
 module.exports.controller = function (app) {
 
+    app.post('/api/noc-cert', (req, res) => {
+        const message = {
+            from: mailer.auth.user,
+            to: "abrikoz@gmail.com",
+            subject: "Скачан сертификат",
+            text: req.body.name,
+        };
+        transport.sendMail(message, (error) => {
+            if (error) return res.send(app.locals.sendError(error));
+            res.send({ok: 200});
+        });
+    })
+
     app.post('/api/feedback', (req, res) => {
         logger.info(req.body);
 
