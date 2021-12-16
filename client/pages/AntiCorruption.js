@@ -7,6 +7,7 @@ export default function AntiCorruption(){
         <h1>Противодействие коррупции</h1>
         <Nav variant="tabs" onSelect={setTab} className="flex-column">
             <Nav.Item>
+                <a href="https://minobrnauki.sakha.gov.ru/" target="_blank">Министерство образования и науки Республики Саха (Якутия)</a>
                 <Nav.Link eventKey="sved">СВЕДЕНИЯ о доходах</Nav.Link>
                 <Nav.Link href="https://drive.google.com/file/d/1cV7GfX-_Th1CKjraTPvV1towjNocZem1/view?usp=sharing">Об антикоррупционной экспертизе нормативных актов и проектов нормативных актов</Nav.Link>
             </Nav.Item>
