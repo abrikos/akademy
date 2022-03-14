@@ -10,6 +10,11 @@ export default function AntiCorruption(){
                 <a href="https://minobrnauki.sakha.gov.ru/" target="_blank">Министерство образования и науки Республики Саха (Якутия)</a>
                 <Nav.Link eventKey="sved">СВЕДЕНИЯ о доходах</Nav.Link>
                 <Nav.Link href="https://drive.google.com/file/d/1cV7GfX-_Th1CKjraTPvV1towjNocZem1/view?usp=sharing">Об антикоррупционной экспертизе нормативных актов и проектов нормативных актов</Nav.Link>
+                <Nav.Link href="https://drive.google.com/file/d/1sPzu_cQtPeoCgJxmmAI_cvuMZyjnAeWi/view?usp=sharing">Об утверждении ответственных</Nav.Link>
+                <Nav.Link href="https://drive.google.com/file/d/1wGcYyUG6vhI42hhO4TVOnhMiKQDRPrFp/view?usp=sharing">План работы по противодействию коррупции</Nav.Link>
+                <Nav.Link href="https://drive.google.com/file/d/1mVzqItLge1G1qOeV0swBu4oJfDq4cGqO/view?usp=sharing">Порядок проведения антикоррупционной экспертизы</Nav.Link>
+                <Nav.Link href="https://drive.google.com/file/d/1ZRJjMy62XqX7z3vNaQneWhjw63kLKzGJ/view?usp=sharing">Кодекс этики</Nav.Link>
+                <Nav.Link href="https://drive.google.com/file/d/1l8e1IMHbS13UXjoX5B4puUt1SHQJqjUS/view?usp=sharing">Приказ о служ. поведении и конфликте интересов и политике</Nav.Link>
             </Nav.Item>
 
         </Nav>
