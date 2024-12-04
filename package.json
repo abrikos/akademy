@@ -22,7 +22,7 @@
     "babel-preset-react-app": "^6.1.0",
     "base58": "^2.0.1",
     "base58-string": "0.0.3",
-    "bcrypt": "^3.0.8",
+    "bcrypt": "^5.0.0",
     "bfj": "6.1.1",
     "bootstrap": "^4.4.1",
     "bootstrap-switch-button-react": "^1.2.0",
