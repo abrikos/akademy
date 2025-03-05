@@ -69,7 +69,7 @@ export default function Home(props) {
         </div>
 
         <div className="alert alert-info">
-            <h2>Оперативные показатели</h2>
+            <h2>Оперативные показатели.</h2>
             <table className="table">
                 <tbody>
                 {sakhaStat.map((r, i) => <tr key={i}>
