@@ -28,7 +28,7 @@ export default function LayoutMenuTop(props) {
                 {label: 'Выход', onClick: props.logOut, hidden: !props.authenticatedUser},
             ], hidden: !props.authenticatedUser
         },
-        //{label: 'Вход', path: '/login', hidden: props.authenticatedUser},
+        //{label: 'Конкурс', path: '/concurs/info'},
         {
             label: 'Вход', onClick: () => {
                 props.updateReturnUrl(window.location.pathname);

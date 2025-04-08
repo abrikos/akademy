@@ -33,7 +33,7 @@ export default function Home(props) {
     }, []);
 
     function formatLastNews(post) {
-        return <div className="first-news">
+        return post && <div className="first-news">
             <div className="first-news-img">
                 {post.isMassMedia && <a href={post.link} target="_blank" rel="noopener noreferrer"><img src={post.previewPath} alt={post.header} className="img-preview"/></a>}
                 {!post.isMassMedia && <A href={post.link}><img src={post.previewPath} className="img-preview" alt={'cover'}/></A>}

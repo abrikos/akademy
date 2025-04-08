@@ -3,7 +3,7 @@ import axios from "axios";
 
 const logger = require('logat');
 const passportLib = require('server/lib/passport');
-const fetchVideoInfo = require('youtube-info');
+//const fetchVideoInfo = require('youtube-info');
 const youtubeChannes = ['UC-ACL2rOnpLvtNYw9HZJQKQ', 'UCmavIHBeAVh6lbVWkMljf3Q'];
 const urlVideos = `https://www.googleapis.com/youtube/v3/playlistItems?key=${process.env.YOUTUBE}&order=date&part=snippet&maxResults=20&playlistId=`
 

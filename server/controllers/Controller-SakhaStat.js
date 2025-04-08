@@ -31,7 +31,7 @@ module.exports.controller = function (app) {
     }
 
 
-    getData()
+    //getData()
 
     const job = new app.locals.CronJob('0 0 * * * *', async function () {
         getData()

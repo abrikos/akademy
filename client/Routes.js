@@ -50,10 +50,18 @@ import Vilui from "./pages/kni-vilui/Vilui";
 import Lectors from "client/pages/lectors/Lectors";
 import AntiCorruption from "./pages/AntiCorruption";
 import NecSert from './pages/nec/NecSert';
+import ConcursForm from "./pages/concurs/ConcursForm";
+import ConcursList from "./pages/concurs/ConcursList";
+import ConcursInfo from "./pages/concurs/ConcursInfo";
+import ConcursDone from "./pages/concurs/ConcursDone";
 
 export default function Routes(props) {
 
     return {
+        "/concurs/form": () => <ConcursForm {...props}/>,
+        "/concurs/list": () => <ConcursList {...props}/>,
+        "/concurs/info": () => <ConcursInfo {...props}/>,
+        "/concurs/done": () => <ConcursDone {...props}/>,
         "/": () => <Home {...props}/>,
         "/gov": () => <Gov {...props}/>,
         "/lector": () => <Lectors {...props}/>,

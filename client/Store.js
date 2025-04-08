@@ -2,8 +2,8 @@ import React, {useEffect, useState} from "react";
 import Layout from "client/components/Layout";
 import API from "client/API";
 import {navigate} from "hookrouter";
-import cookieParser from 'cookie';
-import {useCookies} from 'react-cookie';
+//import cookieParser from 'cookie';
+//import {useCookies} from 'react-cookie';
 
 const themes = [
     {name:'horizontal',label:'Горизонтальный'},
@@ -14,7 +14,7 @@ const themes = [
 
 export default function App() {
     const [theme, setTheme] = useState(themes[0].name);
-    const [cookies, setCookie] = useCookies([]);
+    //const [cookies, setCookie] = useCookies([]);
     const [alert, setAlert] = useState({isOpen: false});
     const [authenticatedUser, setAuthUser] = useState(false);
     const [message, setMessage] = useState({});
@@ -65,7 +65,7 @@ export default function App() {
 
 
     const params = {
-        cookies: cookieParser.parse(document.cookie),
+        //cookies: cookieParser.parse(document.cookie),
         message,
         authenticatedUser,
         alert,
@@ -100,11 +100,11 @@ export default function App() {
         },
 
         getCookie(name) {
-            return cookies[name]
+            //return cookies[name]
         },
 
         setCookie(name, value, options) {
-            setCookie(name, value, options);
+            //setCookie(name, value, options);
         },
 
         async login(){
