@@ -15,6 +15,7 @@ export default function ConcursForm(props) {
         const errors = {}
         if (!formData.get('fio')) errors.fio = 'Укажите ФИО'
         if (!formData.get('school')) errors.school = 'Укажите школу'
+        if (!formData.get('class')) errors.class = 'Укажите класс'
         if (!formData.get('email').match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/)) errors.email = 'Укажите валидный e-mail'
         if (!e.target.file.value) errors.file = 'Добавьте файл с ответами'
         if (Object.keys(errors).length) {
@@ -48,11 +49,17 @@ export default function ConcursForm(props) {
                 <label>ФИО</label>
                 <Input name="fio"/>
                 <div className={'errors'}>{errs.fio}</div>
+
                 <label>Школа</label>
                 <Input name="school"/>
                 <div className={'errors'}>{errs.school}</div>
+
+                <label>Класс</label>
+                <Input name="class" type="number" min={5} max={10}/>
+                <div className={'errors'}>{errs.class}</div>
+
                 <label>E-mail</label>
-                <Input name="email" value={'aa@aa.com'}/>
+                <Input name="email"/>
                 <div className={'errors'}>{errs.email}</div>
                 <Input name="file" type="file"/>
                 <div className={'errors'}>{errs.file}</div>

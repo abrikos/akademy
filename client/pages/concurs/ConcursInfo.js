@@ -11,9 +11,15 @@ export default function ConcursInfo(props) {
             {label: t('Информация')},
         ]}/>
         {/*<ConcursMenu/>*/}
-        {moment([2025, 3, 7]).diff(moment(), 'hours') < 0 && <div style={{display: 'flex', justifyContent: 'space-between'}}>
+        {moment([2025, 3, 28]).diff(moment(), 'hours') < 0 && <div style={{display: 'flex', justifyContent: 'space-between'}}>
             <div style={{background: 'red', color: 'white', padding: '10px'}}>
-                <a href="/tasks.doc" style={{color: "white", textDecoration: 'underline'}}>Скачать задания</a>
+                <a href="/tasks.doc" style={{color: "white", textDecoration: 'underline'}}>Задания 5-6 класс</a>
+            </div>
+            <div style={{background: 'red', color: 'white', padding: '10px'}}>
+                <a href="/tasks.doc" style={{color: "white", textDecoration: 'underline'}}>Задания 7-8 класс</a>
+            </div>
+            <div style={{background: 'red', color: 'white', padding: '10px'}}>
+                <a href="/tasks.doc" style={{color: "white", textDecoration: 'underline'}}>Задания 9-10 класс</a>
             </div>
             <div style={{background: 'blue', color: 'white', padding: '10px'}}>
                 <A style={{color: "white", textDecoration: 'underline'}} href="/concurs/form">Сдать задания</A>

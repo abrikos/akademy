@@ -6,6 +6,7 @@ const Schema = mongoose.Schema;
 const modelSchema = new Schema({
         fio: String,
         school: String,
+        class: String,
         email: String,
         valid: {type: Boolean, default: false},
         ext: String,
