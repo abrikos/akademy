@@ -20,7 +20,7 @@ export default function ConcursInfo(props) {
                 <h1>1-й городской конкурс юных физиков и математиков
                     Академии наук Республики Саха (Якутия)
                 </h1>
-                <h3 style={{textAlign:'center'}}>Дата проведения: 28-29 апреля 2025</h3>
+                <h3 style={{textAlign:'center'}}>Дата проведения: 28-29 апреля 2025 г.</h3>
             </div>
         </div>
 
@@ -42,11 +42,11 @@ export default function ConcursInfo(props) {
                     </div>
                 </div>
                 :
-                <div className={'banner'}>Задания появятся 28 апреля</div>
+                <div className={'banner'}>Задания появятся 28 апреля 2025 г.</div>
 
             }
         </div>
-        <div className={'banner'}>Следите за новостями на главной странице Академии наук РС(Я)</div>
+        <div className={'banner'}>Следите за новостями на главной странице Академии наук РС(Я)!</div>
 
         {info.text.split('\n').map((line, i) => <p>{line}</p>)}
         <p><a href="/concurs-reglament.docx">Положение конкурса</a></p>
