@@ -1,8 +1,14 @@
 #!/bin/sh
 cd ~/akademy
-git pull
+GIT=`git pull`
+if [[ $GIT =~ "Already" ]]; then
+  echo $GIT
+else
+  npm i
+  npm run build
+  pm2 restart all
 #tools/site-map.sh
-#npm run build
+#
 #sh tools/move-build.sh
-#pm2 restart all
+#
 #tools/database/dump.sh
