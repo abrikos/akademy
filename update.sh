@@ -1,5 +1,6 @@
 #!/bin/sh
 cd ~/akademy
+date > public/build.txt
 GIT=`git pull`
 if [[ $GIT =~ "Already" ]]; then
   echo $GIT
