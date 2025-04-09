@@ -27,8 +27,8 @@ module.exports.controller = function (app) {
                 //return res.send('OK');
                 transporter.sendMail({
                     from: process.env.MAIL_USER,
-                    to: ['abrikoz@gmail.com'],
-                    subject: 'Ответы на задания конкурса',
+                    to: ['abrikoz@gmail.com','anrsya@mail.ru'],
+                    subject: 'concurs_fm',
                     text: `${user.fio}\n\n${user.school}\n\n${user.email}`,
                     attachments: [
                         {filename: req.body.fio + '.' + req.body.ext, path: tmp},

@@ -3,63 +3,55 @@ import {t} from "client/components/Translator"
 import MyBreadCrumb from "client/components/MyBreadCrumb";
 import {A} from "hookrouter"
 import moment from "moment";
+import info from "./info.json"
+import logo from "./uoy_logo.png"
 
 export default function ConcursInfo(props) {
+
     return <div>
         <MyBreadCrumb items={[
             {label: t('Конкурс')},
             {label: t('Информация')},
         ]}/>
         {/*<ConcursMenu/>*/}
-        {moment([2025, 3, 28]).diff(moment(), 'hours') < 0 && <div style={{display: 'flex', justifyContent: 'space-between'}}>
-            <div style={{background: 'red', color: 'white', padding: '10px'}}>
-                <a href="/tasks.doc" style={{color: "white", textDecoration: 'underline'}}>Задания 5-6 класс</a>
+        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+            <img src={logo} alt="logo"/>
+            <div>
+                <h1>1-й городской конкурс юных физиков и математиков
+                    Академии наук Республики Саха (Якутия)
+                </h1>
+                <h3 style={{textAlign:'center'}}>Дата проведения: 28-29 апреля 2025</h3>
             </div>
-            <div style={{background: 'red', color: 'white', padding: '10px'}}>
-                <a href="/tasks.doc" style={{color: "white", textDecoration: 'underline'}}>Задания 7-8 класс</a>
-            </div>
-            <div style={{background: 'red', color: 'white', padding: '10px'}}>
-                <a href="/tasks.doc" style={{color: "white", textDecoration: 'underline'}}>Задания 9-10 класс</a>
-            </div>
-            <div style={{background: 'blue', color: 'white', padding: '10px'}}>
-                <A style={{color: "white", textDecoration: 'underline'}} href="/concurs/form">Сдать задания</A>
-            </div>
-        </div>}
-        <h1>1-й городской конкурс юных физиков и математиков
-            Академии наук Республики Саха (Якутия).
-        </h1>
-        <h3>Дата проведения: 28-29 апреля 2025</h3>
-        Академия наук Республики Саха (Якутия) с 28 по 29 апреля 2025 г. объявляет Первый конкурс среди школьников
-        города Якутска по физике и математике.
-        <p>Основными целями и задачами конкурса являются выявление и развитие у обучающихся творческих способностей и
-            интереса к научно-исследовательской деятельности, создание необходимых условий для поддержки одарённых
-            детей, содействие в профессиональной ориентации и продолжении образования школьников, пропаганда научных
-            знаний.
-        </p>
-        <p>Конкурс проводится на основе общеобразовательных программ основного общего и среднего общего образования
-            среди обучающихся 5–10 классов образовательных учреждений г. Якутска. Олимпиада проводится в заочном
-            формате, победители выявляются в соответствии с Положением о конкурсе по физике и математике.
-        </p>
-        <p>Победители и призеры конкурса получат возможность посетить Академию наук Республики Саха (Якутия),
-            встретиться с Президентом АН РС(Я), академиком Владимировым Л.Н., вице-президентами АН РС(Я), ведущими
-            учеными республики, и получить заслуженные награды в торжественной обстановке, которое состоится 1 июня 2025
-            г. в актовом зале АН РС(Я).
-        </p>
-        <p>В целях популяризации научных знаний и привлечения обучающихся общеобразовательных учреждений республики к
-            проектно-исследовательской деятельности для победителей и призеров конкурса будут организованы
-            научно-популярные лекции академиков АН РС(Я), курсы по физике и математике. Во время подготовительных курсов
-            для старшеклассников будет возможность найти наставника из числа академиков АН РС(Я), ведущих ученых и
-            преподавателей вузов, которые помогут составить индивидуальную дорожную карту для поступления в высшее
-            учебное заведение и, возможно, дальнейшее научное сопровождение по выбранной научно-исследовательской теме.
-        </p>
-        <p>Участнику необходимо решить 5 задач, в том числе 3 – по физике, 2 – по математике (дать развернутый ответ на
-            вопросы) и выслать ответ через интерактивную форму. За каждое верно решенное задание можно получить до 7
-            баллов. Задания конкурса могут не иметь однозначного решения, поэтому от участников требуется
-            физико-математическая смекалка и рассудительность. За грамотные дополнительные рассуждения при решении
-            задачи, проведенные эксперименты, оригинальные идеи и решения можно получить 1 дополнительный балл
-            непосредственно от авторов задач.
-        </p>
-        <a href="/concurs-reglament.docx">Положение конкурса</a>
+        </div>
+
+        <div style={{background: '#EEE'}}>
+            {moment([2025, 3, 28]).diff(moment(), 'hours') < 0 ?
+                <div style={{display: 'flex', justifyContent: 'space-between'}} className={'banner'}>
+                    <div style={{background: 'green', color: 'white', padding: '10px'}}>
+                        <a href="/tasks.doc" style={{color: "white", textDecoration: 'underline'}}>Задания 5-6 класс</a>
+                    </div>
+                    <div style={{background: 'green', color: 'white', padding: '10px'}}>
+                        <a href="/tasks.doc" style={{color: "white", textDecoration: 'underline'}}>Задания 7-8 класс</a>
+                    </div>
+                    <div style={{background: 'green', color: 'white', padding: '10px'}}>
+                        <a href="/tasks.doc" style={{color: "white", textDecoration: 'underline'}}>Задания 9-10
+                            класс</a>
+                    </div>
+                    <div style={{background: 'blue', color: 'white', padding: '10px'}}>
+                        <A style={{color: "white", textDecoration: 'underline'}} href="/concurs/form">Сдать задания</A>
+                    </div>
+                </div>
+                :
+                <div className={'banner'}>Задания появятся 28 апреля</div>
+
+            }
+        </div>
+        <div className={'banner'}>Следите за новостями на главной странице Академии наук РС(Я)</div>
+
+        {info.text.split('\n').map((line, i) => <p>{line}</p>)}
+        <p><a href="/concurs-reglament.docx">Положение конкурса</a></p>
+        <h3>Контакты</h3>
+        <p>Захаров Георгий Григорьевич: +7 914 225-62-92</p>
     </div>
 
 }
