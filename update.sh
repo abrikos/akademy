@@ -1,9 +1,10 @@
 #!/bin/sh
 cd ~/akademy
-date > public/build.txt
+
 
 GIT=`git pull`
 if [[ $GIT =~ "Already" ]]; then
+  date > public/build.txt
   echo $GIT
 else
   npm i
