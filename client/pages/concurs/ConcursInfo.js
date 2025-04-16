@@ -5,6 +5,7 @@ import {A} from "hookrouter"
 import moment from "moment";
 import info from "./info.json"
 import logo from "./uoy_logo.png"
+import logo2 from "./logo2.png"
 
 export default function ConcursInfo(props) {
 
@@ -15,13 +16,14 @@ export default function ConcursInfo(props) {
         ]}/>
         {/*<ConcursMenu/>*/}
         <div style={{display: 'flex', justifyContent: 'space-between'}}>
-            <img src={logo} alt="logo"/>
+            <img src={logo} alt="logo" width={200} height={200}/>
             <div>
                 <h1>1-й городской конкурс юных физиков и математиков
                     Академии наук Республики Саха (Якутия)
                 </h1>
                 <h3 style={{textAlign:'center'}}>Дата проведения: 28-29 апреля 2025 г.</h3>
             </div>
+            <img src={logo2} alt="logo" width={200} height={200}/>
         </div>
 
         <div style={{background: '#EEE'}}>
@@ -42,7 +44,7 @@ export default function ConcursInfo(props) {
                     </div>
                 </div>
                 :
-                <div className={'banner'}>Задания появятся 28 апреля 2025 г.</div>
+                <div className={'banner'}>Задания появятся 28 апреля 2025 г</div>
 
             }
         </div>
